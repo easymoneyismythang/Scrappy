@@ -1,0 +1,12 @@
+.gradle/
+.kotlin/
+**/build/
+local.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+keystore.properties
+scrappy-release.properties
+.DS_Store
