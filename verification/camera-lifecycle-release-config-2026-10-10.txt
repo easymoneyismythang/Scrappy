@@ -1,0 +1,1 @@
+PASS: release configuration gate is wired for AI endpoint + privacy URL safety

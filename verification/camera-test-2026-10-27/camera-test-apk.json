@@ -1,0 +1,15 @@
+{
+  "filename": "app-cameraTest.apk",
+  "sha256": "b699c531eab17df1d019b6c34ac13f2fc8c0a6df6e5502bad2ee33332fd6340f",
+  "size_bytes": 7173430,
+  "package": "com.scrappy.app.cameratest",
+  "version_code": 55,
+  "version_name": "4.9.6",
+  "min_sdk": 26,
+  "signer_sha256": [
+    "69c6ff0241deacec91031a9fcf4eb38e5b8e33e0202a1a6f7387440b255a4ff1"
+  ],
+  "signature_verified": true,
+  "variant": "camera-test",
+  "phone_acceptance": "Not tested; APK verification does not establish successful installation or camera/AI operation."
+}

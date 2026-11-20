@@ -1,0 +1,40 @@
+✔ budget persists across restarts and resets by UTC day (6.550469ms)
+✔ corrupt budget refuses startup (1.458717ms)
+✔ result rejects unsupported groups and oversized fields (0.942764ms)
+✔ JPEG POST returns only validated result and consumes one budget (63.772464ms)
+✔ invalid JPEG does not use provider budget (11.179804ms)
+✔ oversized photo rejected without provider call (21.187465ms)
+✔ wrong content type rejected (6.72159ms)
+✔ daily limit enforced for valid requests (36.680019ms)
+✔ peer limit enforced and does not trust spoofed forwarding (16.782323ms)
+✔ provider errors do not expose API keys or image contents (6.988734ms)
+✔ provider request uses image bytes, constrained schema and server-side key (1.625691ms)
+✔ blocked or truncated provider response rejected (0.731939ms)
+✔ invalid service limits refuse startup (1.375898ms)
+✔ busy service rejects excess work without charging budget and recovers after provider failure (22.050073ms)
+✔ oversized and malformed provider replies are rejected (2.766669ms)
+✔ analysis deadline aborts stalled work and frees the service for a retry (92.180056ms)
+✔ analysis deadline validation rejects invalid values (4.234753ms)
+✔ a late provider result cannot replace the timeout response (47.800727ms)
+✔ provider receives the gateway cancellation signal (2.05746ms)
+✔ disconnect aborts provider work and releases capacity even if adapter ignores cancellation (60.126863ms)
+✔ finishing a normal response does not cancel a successful provider call (6.938233ms)
+✔ stalled upload times out without provider charge and releases capacity (164.857752ms)
+✔ trickling bytes cannot extend the upload deadline (160.224438ms)
+✔ disconnect during upload releases capacity without spending provider budget (17.16722ms)
+✔ upload deadline validation rejects invalid values (1.989466ms)
+✔ provider HTTP failures cancel unread response bodies before a retry (3.154907ms)
+✔ provider body cancellation failure does not expose private error details (0.456172ms)
+✔ early unsupported format refusal closes incomplete upload (5.435296ms)
+✔ early oversized photo refusal closes incomplete upload (4.153268ms)
+✔ early unknown route refusal closes incomplete upload (3.862075ms)
+✔ early chunked photo refusal closes incomplete upload (3.159197ms)
+✔ early peer quota refusal closes incomplete upload (5.330674ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 963.431376

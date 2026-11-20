@@ -1,0 +1,16 @@
+{
+  "kotlin_jvm_tests": 173,
+  "gateway_tests": 25,
+  "integration_tests": 4,
+  "new_android_build_completed": false,
+  "live_gemini_tested": false,
+  "physical_device_tested": false,
+  "source_sha256": {
+    "app/src/main/java/com/scrappy/app/data/AiHttpClient.kt": "f43726cfe338abd868656dde90c73849c278ac6574ec77821daec27d02209821",
+    "transport-tests/src/test/kotlin/com/scrappy/app/GatewayIntegrationTest.kt": "3e66c7f90dc3afb3dae2f0d5040120be7f183b5006df4de2882fe965e9ab1458",
+    "transport-tests/fixtures/gateway.mjs": "c26424353725933ba4804d57df61ff696540002b57f82f1bc8ea8d3460adecdc",
+    "transport-tests/build.gradle.kts": "139cedae9899f3a1f23b661c4643d71f7ef27d7495f0391b826be914897ecc7f",
+    ".github/workflows/android-phone-build.yml": "3ae0b77838a258ea95de694d51615c03598be291b2b505c405fe398cdbb133c1",
+    ".gitlab-ci.yml": "255d904c703d0393003c14f41390196cec0accc3afb50539a010f6133eca277f"
+  }
+}

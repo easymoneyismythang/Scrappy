@@ -1,0 +1,8 @@
+{
+  "scripts/verify_phone_apk.py": "23f5941a3821f49b9b290a48c9fafc75649b3610bbfb38a91e259d37783084c4",
+  "scripts/test_verify_phone_apk.py": "beb899680d5a2af630751e8db23d54fc493cf9140bd7e271d7c826e9862b8f2c",
+  ".github/workflows/android-phone-build.yml": "a9ee8b6484eb9528e1681e97013b983cdd952d55a830b2fcb97b1b71c811c2e9",
+  "INSTALL_TEST_BUILD.md": "0e1c99e66628596d897abce59790ef0d40a4d5ad3f5ed9a391a2e11c279d635f",
+  "NEXT_ACCEPTANCE_MILESTONE.md": "6f5d31ebb22364065fee9fb871027e1c8c773c02723e808871e690bb58220ed8",
+  "PHONE_INSTALL_VERIFICATION_2026-10-21.md": "fae1098bba6609e659da0e00e2066b682e308e78d90df12bbd2c586da3f0b319"
+}

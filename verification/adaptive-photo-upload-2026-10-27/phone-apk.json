@@ -1,0 +1,14 @@
+{
+  "filename": "app-debug.apk",
+  "sha256": "7dbb589e0cd4251855fedd51787cb8ed72bc17804119907b5984ca6a06737624",
+  "size_bytes": 7173434,
+  "package": "com.scrappy.app.preview",
+  "version_code": 55,
+  "version_name": "4.9.6",
+  "min_sdk": 26,
+  "signer_sha256": [
+    "69c6ff0241deacec91031a9fcf4eb38e5b8e33e0202a1a6f7387440b255a4ff1"
+  ],
+  "signature_verified": true,
+  "phone_acceptance": "Not tested; APK verification does not establish successful installation or camera/AI operation."
+}

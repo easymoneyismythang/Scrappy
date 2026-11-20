@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="comparison_yard" type="id" />
+    <item name="comparison_miles" type="id" />
+    <item name="comparison_mpg" type="id" />
+    <item name="comparison_fuel" type="id" />
+    <item name="comparison_minutes" type="id" />
+    <item name="comparison_labor" type="id" />
+    <item name="comparison_fees" type="id" />
+</resources>

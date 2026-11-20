@@ -1,0 +1,8 @@
+package: name='com.scrappy.app' versionCode='48' versionName='4.7.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+sdkVersion:'26'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.CAMERA'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='com.scrappy.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-debuggable
+Signature verification: PASSED

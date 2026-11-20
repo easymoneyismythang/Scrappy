@@ -1,0 +1,1 @@
+Android XML parses. Android debug/release Kotlin/Java compile. APK signature/metadata valid. 108 standalone core tests and 108 Android Gradle tests passed. Lint: 0 errors, 52 warnings. 50 source milestones implemented; phone checks pending.

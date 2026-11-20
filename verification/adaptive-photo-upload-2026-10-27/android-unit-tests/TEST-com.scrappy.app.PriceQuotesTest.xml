@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.PriceQuotesTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-28T03:41:42" hostname="ebbc3500548c" time="0.004">
+  <properties/>
+  <testcase name="quoteCapacityRejectsOverflowButAllowsUpdate" classname="com.scrappy.app.PriceQuotesTest" time="0.003"/>
+  <testcase name="confirmedPriceNeverReturnsDemoBenchmark" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="removalOnlyRemovesSpecifiedGradeAndYard" classname="com.scrappy.app.PriceQuotesTest" time="0.001"/>
+  <testcase name="updatingYardNormalizesNameAndRetainsOtherGrades" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="newestQuoteWinsRegardlessOfListOrder" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="savingSecondYardRetainsFirst" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="removedQuoteReturnsToDemo" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="zeroQuoteDoesNotFallBackToDemo" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="invalidQuotesAreRejected" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="confirmationStartsAtExactly24Hours" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="invalidStoredQuoteCannotOverrideValidQuote" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="quoteOverridesDemoOnlyForItsMetal" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

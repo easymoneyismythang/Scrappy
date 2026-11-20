@@ -1,0 +1,6 @@
+{
+  "app/src/main/java/com/scrappy/app/data/AiHttpClient.kt": "0714ccfd7bed39199080194640fc77387df78b82eced596b56beeab64a59e7af",
+  "app/src/main/java/com/scrappy/app/data/RequestDeadline.kt": "9b1bb45412530243675fb5878a2dfcabc1d64163d4ed14eb8a81d5544485b5f8",
+  "app/src/test/java/com/scrappy/app/AiHttpClientTest.kt": "3ec7299f143e9f80486318d84bc07cd082f857b96866e003a4ddda6f03735268",
+  "app/src/test/java/com/scrappy/app/RequestDeadlineTest.kt": "6bc19c0c6ce2a7023471d420121279ea013edb58fd8ce0716263280f15f5317c"
+}

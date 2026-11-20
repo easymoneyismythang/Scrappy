@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.RequestCancellationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-27T01:08:14" hostname="91909346cab2" time="0.004">
+  <properties/>
+  <testcase name="completedConnectionIsNotClosedAgainByCancellation" classname="com.scrappy.app.RequestCancellationTest" time="0.001"/>
+  <testcase name="leavingBeforeConnectionCreationPreventsUpload" classname="com.scrappy.app.RequestCancellationTest" time="0.0"/>
+  <testcase name="lateAttachStillReportsCancellationWhenDisconnectThrows" classname="com.scrappy.app.RequestCancellationTest" time="0.0"/>
+  <testcase name="leavingClosesActiveRequestExactlyOnce" classname="com.scrappy.app.RequestCancellationTest" time="0.001"/>
+  <testcase name="throwingDisconnectDoesNotEscapeCancellationOrRunTwice" classname="com.scrappy.app.RequestCancellationTest" time="0.0"/>
+  <testcase name="cancellationReleasesBlockedNetworkWorker" classname="com.scrappy.app.RequestCancellationTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

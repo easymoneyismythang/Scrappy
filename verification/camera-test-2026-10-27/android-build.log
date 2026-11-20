@@ -1,0 +1,88 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCameraTestBuild UP-TO-DATE
+> Task :app:generateCameraTestBuildConfig
+> Task :app:generateCameraTestResValues
+> Task :app:checkCameraTestAarMetadata
+> Task :app:mapCameraTestSourceSetPaths
+> Task :app:generateCameraTestResources
+> Task :app:packageCameraTestResources
+> Task :app:parseCameraTestLocalResources
+> Task :app:createCameraTestCompatibleScreenManifests
+> Task :app:extractDeepLinksCameraTest
+> Task :app:mergeCameraTestResources
+> Task :app:processCameraTestMainManifest
+> Task :app:processCameraTestManifest
+> Task :app:processCameraTestManifestForPackage
+> Task :app:javaPreCompileCameraTest
+> Task :app:preCameraTestUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileCameraTestUnitTest
+> Task :transport-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :transport-tests:compileKotlin UP-TO-DATE
+> Task :transport-tests:compileJava NO-SOURCE
+> Task :transport-tests:processResources NO-SOURCE
+> Task :transport-tests:classes UP-TO-DATE
+> Task :transport-tests:jar UP-TO-DATE
+> Task :transport-tests:compileTestKotlin UP-TO-DATE
+> Task :transport-tests:compileTestJava NO-SOURCE
+> Task :transport-tests:processTestResources NO-SOURCE
+> Task :transport-tests:testClasses UP-TO-DATE
+> Task :transport-tests:test UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:mergeCameraTestNativeDebugMetadata NO-SOURCE
+> Task :app:mergeCameraTestShaders
+> Task :app:compileCameraTestShaders NO-SOURCE
+> Task :app:generateCameraTestAssets UP-TO-DATE
+> Task :app:mergeCameraTestAssets
+> Task :app:compressCameraTestAssets
+> Task :app:desugarCameraTestFileDependencies
+> Task :app:checkCameraTestDuplicateClasses
+> Task :app:processCameraTestResources
+> Task :app:mergeExtDexCameraTest
+> Task :app:mergeLibDexCameraTest
+> Task :app:mergeCameraTestJniLibFolders
+> Task :app:mergeCameraTestNativeLibs
+
+> Task :app:stripCameraTestDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libimage_processing_util_jni.so, libsurface_util_jni.so.
+
+> Task :app:validateSigningCameraTest
+> Task :app:writeCameraTestAppMetadata
+> Task :app:writeCameraTestSigningConfigVersions
+
+> Task :app:compileCameraTestKotlin
+w: file:///workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:38:29 'fun <T : Parcelable!> getParcelableArrayList(p0: String?): ArrayList<T!>?' is deprecated. Deprecated in Java.
+
+> Task :app:compileCameraTestJavaWithJavac
+> Task :app:bundleCameraTestClassesToRuntimeJar
+> Task :app:bundleCameraTestClassesToCompileJar
+> Task :app:processCameraTestJavaRes
+> Task :app:generateCameraTestLintReportModel
+> Task :app:generateCameraTestUnitTestLintModel
+> Task :app:compileCameraTestUnitTestKotlin
+> Task :app:compileCameraTestUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processCameraTestUnitTestJavaRes
+
+> Task :app:testCameraTestUnitTest
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+
+> Task :app:lintAnalyzeCameraTestUnitTest
+> Task :app:dexBuilderCameraTest
+> Task :app:mergeCameraTestGlobalSynthetics
+> Task :app:mergeCameraTestJavaResource
+> Task :app:mergeProjectDexCameraTest
+> Task :app:packageCameraTest
+> Task :app:createCameraTestApkListingFileRedirect
+> Task :app:assembleCameraTest
+> Task :app:lintAnalyzeCameraTest
+
+> Task :app:lintReportCameraTest
+Wrote HTML report to file:///workspace/scratch/9585bd37f765/scrappy/app/build/reports/lint-results-cameraTest.html
+
+> Task :app:lintCameraTest
+
+BUILD SUCCESSFUL in 1m 34s
+54 actionable tasks: 49 executed, 5 up-to-date

@@ -1,0 +1,14 @@
+{
+  "build-artifacts/Scrappy-v4.9.0-unsigned.aab": {
+    "bytes": 3033393,
+    "sha256": "81f87e530577ad590cbcf86a3a06e024ba93d70dc0012af79d26d4b3ffd92212"
+  },
+  "app/build/outputs/apk/debug/app-debug.apk": {
+    "bytes": 7140666,
+    "sha256": "010440a1096255f04b960bc70fcf35faec27f5a3069886be3f6a855d3dcdf972"
+  },
+  "app/build/outputs/apk/release/app-release-unsigned.apk": {
+    "bytes": 2140948,
+    "sha256": "878ecb08f18d20919fc8299969de8af6f6044f438398d36d4abfe869d9d6ab75"
+  }
+}

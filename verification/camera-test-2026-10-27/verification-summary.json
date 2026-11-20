@@ -1,0 +1,19 @@
+{
+  "android_variant_unit_tests": 154,
+  "verifier_tests": 15,
+  "lint_errors": 0,
+  "lint_warnings": 74,
+  "signature_verified": true,
+  "package_verified": "com.scrappy.app.cameratest",
+  "label_verified": "Scrappy Camera Test",
+  "production_package_rejected_by_verifier": true,
+  "workflow_yaml_parses": true,
+  "emulator_test_execution_complete": false,
+  "live_gemini_configured": false,
+  "release_config_gate_rejected_missing_ai": true,
+  "delivered_apk_hash_matches_sdk_verified_build": true,
+  "delivered_apk_contains_adaptive_encoder": true,
+  "emulator_boot_completed": false,
+  "emulator_boot_timeout_seconds": 600,
+  "instrumentation_tests_executed": 0
+}

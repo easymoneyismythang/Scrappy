@@ -1,0 +1,14 @@
+{
+  "apk": {
+    "file": "Scrappy-v4.7.0-debug.apk",
+    "sha256": "0623b9d6ed4e56b2488ecf5fdde3e12f4d41fbf4a7a0531c2433c23316715026",
+    "bytes": 7123926
+  },
+  "version": "4.7.0",
+  "versionCode": 48,
+  "unitTests": 108,
+  "lintErrors": 0,
+  "lintWarnings": 52,
+  "sourceMilestones": 50,
+  "phoneTested": false
+}

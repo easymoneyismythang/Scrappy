@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.LedgerCodecTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-28T03:53:25" hostname="ebbc3500548c" time="0.005">
+  <properties/>
+  <testcase name="saleRoundTripDoesNotDependOnOriginalEstimateStillExisting" classname="com.scrappy.app.LedgerCodecTest" time="0.001"/>
+  <testcase name="emptyCollectionsRoundTrip" classname="com.scrappy.app.LedgerCodecTest" time="0.0"/>
+  <testcase name="corruptPayloadIsReportedNotSilentlyDiscarded" classname="com.scrappy.app.LedgerCodecTest" time="0.0"/>
+  <testcase name="tamperedNonFiniteOrNegativeDataIsRejected" classname="com.scrappy.app.LedgerCodecTest" time="0.0"/>
+  <testcase name="multipleEstimatesRoundTripIndependently" classname="com.scrappy.app.LedgerCodecTest" time="0.001"/>
+  <testcase name="draftRoundTripRetainsSourcesNullDatesAndCosts" classname="com.scrappy.app.LedgerCodecTest" time="0.0"/>
+  <testcase name="unknownSchemaIsRejected" classname="com.scrappy.app.LedgerCodecTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

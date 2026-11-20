@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.GatewayIntegrationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-28T03:41:36" hostname="ebbc3500548c" time="1.5">
+  <properties/>
+  <testcase name="photoPassesThroughClientAndGatewayToValidatedResult" classname="com.scrappy.app.GatewayIntegrationTest" time="0.153"/>
+  <testcase name="clientDeadlineAbortsGatewayProviderAndAllowsRetry" classname="com.scrappy.app.GatewayIntegrationTest" time="1.135"/>
+  <testcase name="invalidProviderResultIsHiddenAndNextPhotoSucceeds" classname="com.scrappy.app.GatewayIntegrationTest" time="0.117"/>
+  <testcase name="cancellingClientAbortsGatewayProviderAndAllowsRetry" classname="com.scrappy.app.GatewayIntegrationTest" time="0.093"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

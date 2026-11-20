@@ -1,0 +1,17 @@
+test_cli_preserves_device_and_update_findings (test_verify_phone_apk.PhoneApkTests.test_cli_preserves_device_and_update_findings) ... ok
+test_cli_rejects_invalid_sdk_before_inspection (test_verify_phone_apk.PhoneApkTests.test_cli_rejects_invalid_sdk_before_inspection) ... ok
+test_cli_supported_sdk_is_not_phone_acceptance (test_verify_phone_apk.PhoneApkTests.test_cli_supported_sdk_is_not_phone_acceptance) ... ok
+test_device_at_or_above_minimum_has_no_sdk_blocker (test_verify_phone_apk.PhoneApkTests.test_device_at_or_above_minimum_has_no_sdk_blocker) ... ok
+test_device_below_minimum_is_blocked (test_verify_phone_apk.PhoneApkTests.test_device_below_minimum_is_blocked) ... ok
+test_different_key_and_downgrade_both_reported (test_verify_phone_apk.PhoneApkTests.test_different_key_and_downgrade_both_reported) ... ok
+test_different_package_is_not_an_update (test_verify_phone_apk.PhoneApkTests.test_different_package_is_not_an_update) ... ok
+test_invalid_signature_is_rejected_before_metadata (test_verify_phone_apk.PhoneApkTests.test_invalid_signature_is_rejected_before_metadata) ... ok
+test_missing_fingerprint_is_rejected (test_verify_phone_apk.PhoneApkTests.test_missing_fingerprint_is_rejected) ... ok
+test_not_an_apk_is_rejected (test_verify_phone_apk.PhoneApkTests.test_not_an_apk_is_rejected) ... ok
+test_same_key_equal_version_is_allowed (test_verify_phone_apk.PhoneApkTests.test_same_key_equal_version_is_allowed) ... ok
+test_verified_metadata (test_verify_phone_apk.PhoneApkTests.test_verified_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.013s
+
+OK

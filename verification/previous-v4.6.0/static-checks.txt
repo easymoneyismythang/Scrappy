@@ -1,0 +1,3 @@
+Android XML: parsed successfully
+Android Gradle build/lint: NOT RUN (SDK and Gradle unavailable)
+Device UI/file picker/persistence: NOT RUN

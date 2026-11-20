@@ -1,0 +1,9 @@
+Scrappy v4.9.2 release audit — 2026-10-06
+backend_ai_gateway_tests=PASS_12_OF_12
+core_test_fresh_rerun=BLOCKED_OFFLINE_DEPENDENCY_CHECKSUM
+core_test_prior_packaged_verification=PASS
+existing_android_lint_errors=0
+existing_android_lint_warnings=54
+physical_android_acceptance=PENDING
+production_ai_service=PENDING
+signed_play_bundle=PENDING

@@ -1,0 +1,69 @@
+image: eclipse-temurin:17-jdk
+
+stages:
+  - verify
+  - build
+
+variables:
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/.gradle"
+
+cache:
+  key: gradle-cache
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+verify_ai_gateway:
+  image: node:22-bookworm-slim
+  stage: verify
+  script:
+    - node --test backend/server.test.mjs
+
+check_live_setup:
+  image: python:3.12-slim
+  stage: verify
+  when: manual
+  allow_failure: true
+  timeout: 3 minutes
+  script:
+    - python3 scripts/build_phone_test.py --check-service
+
+build_phone_test_apk:
+  image: node:22-bookworm-slim
+  stage: build
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y --no-install-recommends curl unzip ca-certificates python3 openjdk-17-jdk-headless
+    - export ANDROID_HOME="$CI_PROJECT_DIR/.android-sdk"
+    - export ANDROID_SDK_ROOT="$ANDROID_HOME"
+    - mkdir -p "$ANDROID_HOME/cmdline-tools"
+    - curl --fail --location --retry 3 https://dl.google.com/android/repository/commandlinetools-linux-15859902_latest.zip --output /tmp/scrappy-sdk-tools.zip
+    - echo '4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583  /tmp/scrappy-sdk-tools.zip' | sha256sum --check
+    - unzip -q /tmp/scrappy-sdk-tools.zip -d "$ANDROID_HOME/cmdline-tools"
+    - mv "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/latest"
+    - export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+    - printf '%s\n' y y y y y y y y y y | sdkmanager --licenses > /dev/null
+    - sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
+    - chmod +x gradlew
+  script:
+    - python3 scripts/check_release_config.py
+    - python3 scripts/check_release_consistency.py
+    - python3 -m unittest discover -s scripts -p 'test_*.py'
+    - python3 scripts/build_phone_test.py
+    - python3 scripts/verify_phone_apk.py app/build/outputs/apk/debug/app-debug.apk --aapt "$ANDROID_HOME/build-tools/35.0.0/aapt" --apksigner "$ANDROID_HOME/build-tools/35.0.0/apksigner" --output verification/phone-apk.json
+    - python3 scripts/verify_phone_apk.py app/build/outputs/apk/cameraTest/app-cameraTest.apk --variant camera-test --aapt "$ANDROID_HOME/build-tools/35.0.0/aapt" --apksigner "$ANDROID_HOME/build-tools/35.0.0/apksigner" --output verification/camera-test-apk.json
+  artifacts:
+    name: "Scrappy-v4.9.6-phone-test"
+    when: always
+    expire_in: 30 days
+    paths:
+      - app/build/outputs/apk/debug/app-debug.apk
+      - app/build/outputs/apk/cameraTest/app-cameraTest.apk
+      - verification/phone-apk.json
+      - verification/camera-test-apk.json
+      - app/build/reports/lint-results-*
+    reports:
+      junit:
+        - app/build/test-results/testDebugUnitTest/*.xml
+        - app/build/test-results/testCameraTestUnitTest/*.xml
+        - transport-tests/build/test-results/test/*.xml

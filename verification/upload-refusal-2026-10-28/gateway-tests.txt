@@ -1,0 +1,40 @@
+✔ budget persists across restarts and resets by UTC day (3.725235ms)
+✔ corrupt budget refuses startup (0.839094ms)
+✔ result rejects unsupported groups and oversized fields (0.384499ms)
+✔ JPEG POST returns only validated result and consumes one budget (43.186252ms)
+✔ invalid JPEG does not use provider budget (9.900022ms)
+✔ oversized photo rejected without provider call (16.364615ms)
+✔ wrong content type rejected (4.617039ms)
+✔ daily limit enforced for valid requests (5.751669ms)
+✔ peer limit enforced and does not trust spoofed forwarding (6.427678ms)
+✔ provider errors do not expose API keys or image contents (5.475253ms)
+✔ provider request uses image bytes, constrained schema and server-side key (1.625419ms)
+✔ blocked or truncated provider response rejected (0.601827ms)
+✔ invalid service limits refuse startup (0.855229ms)
+✔ busy service rejects excess work without charging budget and recovers after provider failure (11.20596ms)
+✔ oversized and malformed provider replies are rejected (1.180709ms)
+✔ analysis deadline aborts stalled work and frees the service for a retry (48.581804ms)
+✔ analysis deadline validation rejects invalid values (1.031244ms)
+✔ a late provider result cannot replace the timeout response (44.113209ms)
+✔ provider receives the gateway cancellation signal (0.710471ms)
+✔ disconnect aborts provider work and releases capacity even if adapter ignores cancellation (11.344719ms)
+✔ finishing a normal response does not cancel a successful provider call (3.573596ms)
+✔ stalled upload times out without provider charge and releases capacity (157.621422ms)
+✔ trickling bytes cannot extend the upload deadline (159.602768ms)
+✔ disconnect during upload releases capacity without spending provider budget (9.732209ms)
+✔ upload deadline validation rejects invalid values (1.204545ms)
+✔ provider HTTP failures cancel unread response bodies before a retry (1.631409ms)
+✔ provider body cancellation failure does not expose private error details (2.05693ms)
+✔ early unsupported format refusal closes incomplete upload (5.224595ms)
+✔ early oversized photo refusal closes incomplete upload (3.116488ms)
+✔ early unknown route refusal closes incomplete upload (3.092671ms)
+✔ early chunked photo refusal closes incomplete upload (3.508948ms)
+✔ early peer quota refusal closes incomplete upload (11.997172ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 718.263904

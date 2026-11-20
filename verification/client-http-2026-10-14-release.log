@@ -1,0 +1,3 @@
+PASS: release configuration gate is wired for AI endpoint + privacy URL safety
+RELEASE CONSISTENCY: FAIL
+- NEXT_ACCEPTANCE_MILESTONE.md: missing stale-artifact warning

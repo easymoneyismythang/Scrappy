@@ -1,0 +1,1 @@
+136 Android tests; zero failures/errors. 136 standalone core tests; 12 Node server tests; no failures. XML parsed. Lint: 0 errors, 54 warnings. Debug signature/package/version/minSdk/targetSdk checked. AI endpoint/privacy URL empty in final Preview BuildConfig. AAB ZIP integrity checked; unsigned signature status verified. No phone or real provider acceptance performed.

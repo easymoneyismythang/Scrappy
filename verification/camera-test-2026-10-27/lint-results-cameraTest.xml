@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.9.2">
+
+    <issue
+        id="ExifInterface"
+        severity="Warning"
+        message="Avoid using `android.media.ExifInterface`; use `androidx.exifinterface.media.ExifInterface` instead"
+        category="Correctness"
+        priority="6"
+        summary="Using `android.media.ExifInterface`"
+        explanation="The `android.media.ExifInterface` implementation has some known security bugs in older versions of Android. There is a new implementation available of this library in the support library, which is preferable."
+        errorLine1="import android.media.ExifInterface"
+        errorLine2="       ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/AiPhotoClient.kt"
+            line="6"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="LockedOrientationActivity"
+        severity="Warning"
+        message="Expecting `android:screenOrientation=&quot;unspecified&quot;` or `&quot;fullSensor&quot;` for this activity so the user can use the application in any orientation and provide a great experience on Chrome OS devices"
+        category="Correctness"
+        priority="4"
+        summary="Incompatible screenOrientation value"
+        explanation="The `&lt;activity>` element should not be locked to any orientation so that users can take advantage of the multi-window environments and larger screens available on Android. To fix the issue, consider declaring the corresponding activity element with `screenOrientation=&quot;unspecified&quot;`or `fullSensor` attribute."
+        url="https://developer.android.com/topic/arc/window-management"
+        urls="https://developer.android.com/topic/arc/window-management"
+        errorLine1="        &lt;activity android:name=&quot;.CameraActivity&quot; android:screenOrientation=&quot;portrait&quot; android:exported=&quot;false&quot;/>"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/AndroidManifest.xml"
+            line="9"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="LockedOrientationActivity"
+        severity="Warning"
+        message="Expecting `android:screenOrientation=&quot;unspecified&quot;` or `&quot;fullSensor&quot;` for this activity so the user can use the application in any orientation and provide a great experience on Chrome OS devices"
+        category="Correctness"
+        priority="4"
+        summary="Incompatible screenOrientation value"
+        explanation="The `&lt;activity>` element should not be locked to any orientation so that users can take advantage of the multi-window environments and larger screens available on Android. To fix the issue, consider declaring the corresponding activity element with `screenOrientation=&quot;unspecified&quot;`or `fullSensor` attribute."
+        url="https://developer.android.com/topic/arc/window-management"
+        urls="https://developer.android.com/topic/arc/window-management"
+        errorLine1="        &lt;activity android:name=&quot;.MainActivity&quot; android:screenOrientation=&quot;portrait&quot; android:exported=&quot;true&quot;>"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/AndroidManifest.xml"
+            line="10"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="DiscouragedApi"
+        severity="Warning"
+        message="Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed."
+        category="Correctness"
+        priority="2"
+        summary="Using discouraged APIs"
+        explanation="Discouraged APIs are allowed and are not deprecated, but they may be unfit for common use (e.g. due to slow performance or subtle behavior)."
+        errorLine1="        &lt;activity android:name=&quot;.CameraActivity&quot; android:screenOrientation=&quot;portrait&quot; android:exported=&quot;false&quot;/>"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/AndroidManifest.xml"
+            line="9"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="DiscouragedApi"
+        severity="Warning"
+        message="Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed."
+        category="Correctness"
+        priority="2"
+        summary="Using discouraged APIs"
+        explanation="Discouraged APIs are allowed and are not deprecated, but they may be unfit for common use (e.g. due to slow performance or subtle behavior)."
+        errorLine1="        &lt;activity android:name=&quot;.MainActivity&quot; android:screenOrientation=&quot;portrait&quot; android:exported=&quot;true&quot;>"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/AndroidManifest.xml"
+            line="10"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="SetJavaScriptEnabled"
+        severity="Warning"
+        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully"
+        category="Security"
+        priority="6"
+        summary="Using `setJavaScriptEnabled`"
+        explanation="Your code should not invoke `setJavaScriptEnabled` if you are not sure that your app really requires JavaScript support."
+        url="https://goo.gle/SetJavaScriptEnabled"
+        urls="https://goo.gle/SetJavaScriptEnabled,https://developer.android.com/training/articles/security-tips"
+        errorLine1="            javaScriptEnabled=true;domStorageEnabled=true"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingApplicationIcon"
+        severity="Warning"
+        message="Should explicitly set `android:icon`, there is no default"
+        category="Usability:Icons"
+        priority="5"
+        summary="Missing application icon"
+        explanation="You should set an icon for the application as whole because there is no default. This attribute must be set as a reference to a drawable resource containing the image (for example `@drawable/icon`)."
+        url="https://developer.android.com/studio/publish/preparing#publishing-configure"
+        urls="https://developer.android.com/studio/publish/preparing#publishing-configure"
+        errorLine1="    &lt;application android:theme=&quot;@style/Theme.Scrappy&quot; android:label=&quot;${scrappyLabel}&quot; android:allowBackup=&quot;false&quot; android:fullBackupContent=&quot;false&quot; android:dataExtractionRules=&quot;@xml/data_extraction_rules&quot; android:supportsRtl=&quot;true&quot; android:usesCleartextTraffic=&quot;false&quot;>"
+        errorLine2="     ~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/AndroidManifest.xml"
+            line="5"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.scale` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                    val smaller=Bitmap.createScaledBitmap(image,width,height,true)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/AiPhotoClient.kt"
+            line="33"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            .setNeutralButton(&quot;Privacy policy&quot;) { _,_ -> openExternal(Intent(Intent.ACTION_VIEW,Uri.parse(BuildConfig.AI_PRIVACY_URL))) }"
+        errorLine2="                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="232"
+            column="97"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val editor = prefs.edit().putString(&quot;draft&quot;,draftJson).putString(&quot;estimates&quot;,estimatesJson)"
+        errorLine2="                     ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/LedgerStore.kt"
+            line="15"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="    private fun write(key: String, value: String) { check(prefs.edit().putString(key,value).remove(&quot;undo&quot;).commit()) { &quot;Could not save on this device&quot; } }"
+        errorLine2="                                                          ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/LedgerStore.kt"
+            line="23"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        check(prefs.edit().putString(key,value).putString(&quot;undo&quot;,before).commit()) { &quot;Could not delete on this device&quot; }"
+        errorLine2="              ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/LedgerStore.kt"
+            line="43"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        button(l,&quot;Find scrapyards near me&quot;){openExternal(Intent(Intent.ACTION_VIEW,Uri.parse(&quot;geo:0,0?q=&quot;+Uri.encode(&quot;scrap metal recycling near me&quot;))))}"
+        errorLine2="                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="177"
+            column="84"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            if(contact.address.isNotBlank())button(l,&quot;Directions&quot;){openExternal(Intent(Intent.ACTION_VIEW,Uri.parse(&quot;geo:0,0?q=&quot;+Uri.encode(contact.address))))}"
+        errorLine2="                                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="189"
+            column="107"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putString(&quot;contacts&quot;,array.toString()).apply()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="17"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putString(&quot;weather_place&quot;,JSONObject().put(&quot;name&quot;,place.name).put(&quot;lat&quot;,place.latitude).put(&quot;lon&quot;,place.longitude).toString()).remove(&quot;weather_cache&quot;).apply()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="26"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="    fun clearWeatherPlace(){p.edit().remove(&quot;weather_place&quot;).remove(&quot;weather_cache&quot;).apply()}"
+        errorLine2="                            ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="28"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="    fun saveWeatherCache(value:String){p.edit().putString(&quot;weather_cache&quot;,value).apply()}"
+        errorLine2="                                       ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="30"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putString(&quot;price_quotes&quot;, array.toString()).apply()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="46"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putString(&quot;price_quotes&quot;, array.toString()).apply()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="53"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putStringSet(&quot;favorite_yards&quot;, s).apply(); return now"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="59"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="    fun setDefaultMetal(v:String) = p.edit().putString(&quot;default_metal&quot;, v).apply()"
+        errorLine2="                                    ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="62"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="    fun setLaborRate(v:Double) { require(v.isFinite() &amp;&amp; v in 0.0..10_000.0);p.edit().putFloat(&quot;labor_rate&quot;,v.toFloat()).apply() }"
+        errorLine2="                                                                             ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="64"
+            column="78"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        p.edit().putString(&quot;history_v2&quot;,array.toString()).remove(&quot;history&quot;).apply()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/data/Prefs.kt"
+            line="70"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(TextView(this).apply{text=&quot;Metal Photo&quot;;textSize=25f})"
+        errorLine2="                                                ~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="60"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        statusView=TextView(this).apply{text=&quot;Fill the frame with one clean metal item in bright, even light. Avoid hands, faces, license plates, and unrelated objects.&quot;;setPadding(0,12,0,12)};root.addView(ScrollView(this).apply{addView(statusView)},LinearLayout.LayoutParams(-1,(160*resources.displayMetrics.density).toInt()))"
+        errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="63"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        captureButton=Button(this).apply{text=&quot;Capture photo&quot;;setOnClickListener{capture()}};root.addView(captureButton)"
+        errorLine2="                                               ~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="64"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        retryCameraButton=Button(this).apply{text=&quot;Retry camera&quot;;visibility=View.GONE;setOnClickListener{ensureCameraPermission()}};root.addView(retryCameraButton)"
+        errorLine2="                                                   ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="65"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        retakeButton=Button(this).apply{text=&quot;Retake&quot;;visibility=View.GONE;setOnClickListener{showCamera()}};root.addView(retakeButton)"
+        errorLine2="                                              ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="66"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        identifyButton=Button(this).apply{text=&quot;Use identification helper&quot;;visibility=View.GONE;setOnClickListener{startActivity(Intent(this@CameraActivity,MainActivity::class.java).putExtra(&quot;open_identifier&quot;,true));finish()}};root.addView(identifyButton)"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="67"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        aiButton=Button(this).apply{text=&quot;Analyze with AI&quot;;visibility=View.GONE;setOnClickListener{requestAnalysis()}};root.addView(aiButton)"
+        errorLine2="                                          ~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="68"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(Button(this).apply{text=&quot;Back&quot;;setOnClickListener{finish()}})"
+        errorLine2="                                              ~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/CameraActivity.kt"
+            line="69"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                    if(value!=null &amp;&amp; value.isFinite() &amp;&amp; value>=0) weight.setText((if(next==&quot;kg&quot;) value/TripLedger.LB_PER_KG else value*TripLedger.LB_PER_KG).toString())"
+        errorLine2="                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="208"
+            column="84"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                    if(value!=null &amp;&amp; value.isFinite() &amp;&amp; value>=0) weight.setText((if(next==&quot;kg&quot;) value/TripLedger.LB_PER_KG else value*TripLedger.LB_PER_KG).toString())"
+        errorLine2="                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="208"
+            column="84"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                val edit=EditText(this).apply { setText(e.name.take(113)+&quot; (copy)&quot;);filters=arrayOf(android.text.InputFilter.LengthFilter(120)) }"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="240"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                val edit=EditText(this).apply { setText(e.name.take(113)+&quot; (copy)&quot;);filters=arrayOf(android.text.InputFilter.LengthFilter(120)) }"
+        errorLine2="                                                                          ~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="240"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                soldAt=picked.timeInMillis.coerceAtMost(System.currentTimeMillis());selected.text=&quot;Sale date: ${date(soldAt)}&quot;"
+        errorLine2="                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="268"
+            column="99"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                soldAt=picked.timeInMillis.coerceAtMost(System.currentTimeMillis());selected.text=&quot;Sale date: ${date(soldAt)}&quot;"
+        errorLine2="                                                                                                   ~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="268"
+            column="100"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                selected.text=&quot;Sale date: ${date(soldAt)}&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="291"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                selected.text=&quot;Sale date: ${date(soldAt)}&quot;"
+        errorLine2="                               ~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/LedgerActivity.kt"
+            line="291"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text=&quot;Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)&quot;}"
+        errorLine2="                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="40"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text=&quot;Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)&quot;}"
+        errorLine2="                                                                           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="40"
+            column="76"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text=&quot;Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)&quot;}"
+        errorLine2="                                                                                                                                ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="40"
+            column="129"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        val place=prefs.weatherPlace() ?: run{target.text=&quot;🌤 Weather — choose your city&quot;;return}"
+        errorLine2="                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="75"
+            column="60"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                  ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                                                      ~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                                                                                               ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="96"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                                                                                                                                             ~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="142"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="179"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        out.text=&quot;Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource(&quot;Copper #2&quot;)}\n${priceSource(&quot;Steel&quot;)}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping.&quot;};back(l);setContentView(sv)}"
+        errorLine2="                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="169"
+            column="293"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="    private fun showLoadValue(){val sv=root(&quot;Load Value Calculator&quot;);val l=body(sv);val sp=metalSpinner();l.addView(sp);val wt=number(&quot;Weight (lb)&quot;);l.addView(wt);val out=TextView(this).apply{textSize=19f};l.addView(out);button(l,&quot;Estimate load value&quot;){val m=sp.selectedItem.toString();val w=valid(wt,&quot;Weight&quot;) ?: return@button;out.text=&quot;$m × ${String.format(Locale.US,&quot;%.2f&quot;,w)} lb = ${money(w*selectedPrice(m))}\n${priceSource(m)}&quot;};button(l,&quot;Share estimate&quot;){val s=out.text.toString();if(s.isNotBlank())openExternal(Intent.createChooser(Intent(Intent.ACTION_SEND).apply{type=&quot;text/plain&quot;;putExtra(Intent.EXTRA_TEXT,&quot;Scrappy estimate: $s&quot;)},&quot;Share Scrappy estimate&quot;))};back(l);setContentView(sv)}"
+        errorLine2="                                                                                                                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="170"
+            column="338"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="    private fun showLoadValue(){val sv=root(&quot;Load Value Calculator&quot;);val l=body(sv);val sp=metalSpinner();l.addView(sp);val wt=number(&quot;Weight (lb)&quot;);l.addView(wt);val out=TextView(this).apply{textSize=19f};l.addView(out);button(l,&quot;Estimate load value&quot;){val m=sp.selectedItem.toString();val w=valid(wt,&quot;Weight&quot;) ?: return@button;out.text=&quot;$m × ${String.format(Locale.US,&quot;%.2f&quot;,w)} lb = ${money(w*selectedPrice(m))}\n${priceSource(m)}&quot;};button(l,&quot;Share estimate&quot;){val s=out.text.toString();if(s.isNotBlank())openExternal(Intent.createChooser(Intent(Intent.ACTION_SEND).apply{type=&quot;text/plain&quot;;putExtra(Intent.EXTRA_TEXT,&quot;Scrappy estimate: $s&quot;)},&quot;Share Scrappy estimate&quot;))};back(l);setContentView(sv)}"
+        errorLine2="                                                                                                                                                                                                                                                                                                                                                                                           ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/MainActivity.kt"
+            line="170"
+            column="380"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(TextView(this).apply{text=&quot;Weather Radar • NOAA/NWS&quot;;textSize=23f})"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="19"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(TextView(this).apply{text=&quot;U.S. radar coverage. Use the map’s play control to animate precipitation. Internet required.&quot;})"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="20"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        val status=TextView(this).apply{text=&quot;Loading radar…&quot;};root.addView(status)"
+        errorLine2="                                              ~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="21"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            override fun onPageFinished(view:WebView,url:String){if(!pageFailed)status.text=&quot;NOAA/NWS • Check the radar timestamp for freshness.&quot;}"
+        errorLine2="                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="34"
+            column="94"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            override fun onPageFinished(view:WebView,url:String){if(!pageFailed)status.text=&quot;NOAA/NWS • Check the radar timestamp for freshness.&quot;}"
+        errorLine2="                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="34"
+            column="94"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                if(request.isForMainFrame){pageFailed=true;status.text=&quot;Radar unavailable. Check your internet connection, then tap Retry.&quot;}"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="36"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                if(request.isForMainFrame){pageFailed=true;status.text=&quot;Radar unavailable. Check your internet connection, then tap Retry.&quot;}"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="36"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                if(request.isForMainFrame){pageFailed=true;status.text=&quot;Radar service unavailable. Tap Retry to try again.&quot;}"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="39"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                if(request.isForMainFrame){pageFailed=true;status.text=&quot;Radar service unavailable. Tap Retry to try again.&quot;}"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="39"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(Button(this).apply{text=&quot;Retry / Refresh&quot;;setOnClickListener{pageFailed=false;status.text=&quot;Loading radar…&quot;;web.reload()}})"
+        errorLine2="                                              ~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="43"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(Button(this).apply{text=&quot;Retry / Refresh&quot;;setOnClickListener{pageFailed=false;status.text=&quot;Loading radar…&quot;;web.reload()}})"
+        errorLine2="                                                                                                                ~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="43"
+            column="113"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        root.addView(Button(this).apply{text=&quot;Back to Scrappy&quot;;setOnClickListener{finish()}})"
+        errorLine2="                                              ~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/RadarActivity.kt"
+            line="44"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text=&quot;From: ${start ?: &quot;Any&quot;} • Through: ${end ?: &quot;Any&quot;}&quot; },d.year,d.monthValue-1,d.dayOfMonth).show()"
+        errorLine2="                                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="132"
+            column="95"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text=&quot;From: ${start ?: &quot;Any&quot;} • Through: ${end ?: &quot;Any&quot;}&quot; },d.year,d.monthValue-1,d.dayOfMonth).show()"
+        errorLine2="                                                                                               ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="132"
+            column="96"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text=&quot;From: ${start ?: &quot;Any&quot;} • Through: ${end ?: &quot;Any&quot;}&quot; },d.year,d.monthValue-1,d.dayOfMonth).show()"
+        errorLine2="                                                                                                                      ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="132"
+            column="119"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this month&quot;) { start=today.withDayOfMonth(1);end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="137"
+            column="91"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this month&quot;) { start=today.withDayOfMonth(1);end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                           ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="137"
+            column="92"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this month&quot;) { start=today.withDayOfMonth(1);end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                                       ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="137"
+            column="104"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this week&quot;) { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="138"
+            column="118"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this week&quot;) { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                                                      ~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="138"
+            column="119"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        button(box,&quot;Use this week&quot;) { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text=&quot;From: $start • Through: $end&quot; }"
+        errorLine2="                                                                                                                                  ~~~~~~~~~~~~">
+        <location
+            file="/workspace/scratch/9585bd37f765/scrappy/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt"
+            line="138"
+            column="131"/>
+    </issue>
+
+</issues>

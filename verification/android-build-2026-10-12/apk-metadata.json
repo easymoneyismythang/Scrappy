@@ -1,0 +1,16 @@
+{
+  "filename": "Scrappy-v4.9.6-phone-preview.apk",
+  "sha256": "8f59cfbdf60a722fdd384c7e54a92dfd48122a00b4b1316621c5e54a72391661",
+  "size_bytes": 7173434,
+  "application_id": "com.scrappy.app.preview",
+  "version_name": "4.9.6",
+  "version_code": 55,
+  "min_sdk": 26,
+  "target_sdk": 36,
+  "signing": "debug APK Signature Scheme v2 verified",
+  "ai_configured": false,
+  "android_unit_tests": 141,
+  "unit_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 80
+}

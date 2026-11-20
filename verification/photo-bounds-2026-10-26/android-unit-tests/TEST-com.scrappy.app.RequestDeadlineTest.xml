@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.RequestDeadlineTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T01:08:14" hostname="91909346cab2" time="0.31">
+  <properties/>
+  <testcase name="expiryDisconnectsOnceAndRejectsResultEvenIfDisconnectFails" classname="com.scrappy.app.RequestDeadlineTest" time="0.057"/>
+  <testcase name="completionCancelsPendingDisconnect" classname="com.scrappy.app.RequestDeadlineTest" time="0.251"/>
+  <testcase name="invalidBudgetRejectedBeforeScheduling" classname="com.scrappy.app.RequestDeadlineTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

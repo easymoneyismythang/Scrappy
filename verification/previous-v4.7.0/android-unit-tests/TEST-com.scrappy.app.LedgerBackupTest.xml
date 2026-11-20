@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.LedgerBackupTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-03T08:44:51" hostname="7f2981d3ac4f" time="0.072">
+  <properties/>
+  <testcase name="corruptJsonFails" classname="com.scrappy.app.LedgerBackupTest" time="0.01"/>
+  <testcase name="rejectsTooManyDraftItems" classname="com.scrappy.app.LedgerBackupTest" time="0.009"/>
+  <testcase name="rejectsNegativeMileage" classname="com.scrappy.app.LedgerBackupTest" time="0.002"/>
+  <testcase name="rejectsDuplicateEstimates" classname="com.scrappy.app.LedgerBackupTest" time="0.002"/>
+  <testcase name="completeRoundTrip" classname="com.scrappy.app.LedgerBackupTest" time="0.001"/>
+  <testcase name="rejectsOversizedInput" classname="com.scrappy.app.LedgerBackupTest" time="0.023"/>
+  <testcase name="rejectsWrongFormat" classname="com.scrappy.app.LedgerBackupTest" time="0.002"/>
+  <testcase name="rejectsOverCapacity" classname="com.scrappy.app.LedgerBackupTest" time="0.015"/>
+  <testcase name="rejectsDuplicateSales" classname="com.scrappy.app.LedgerBackupTest" time="0.001"/>
+  <testcase name="independentReceiptSurvivesDeletedEstimate" classname="com.scrappy.app.LedgerBackupTest" time="0.002"/>
+  <testcase name="rejectsFutureVersion" classname="com.scrappy.app.LedgerBackupTest" time="0.001"/>
+  <testcase name="rejectsFractionalVersion" classname="com.scrappy.app.LedgerBackupTest" time="0.001"/>
+  <testcase name="emptyRoundTrip" classname="com.scrappy.app.LedgerBackupTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

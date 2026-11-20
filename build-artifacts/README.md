@@ -1,0 +1,1 @@
+Unsigned production app bundle for developer review only. Generate a signed release with your protected upload key before Play Console upload. Source, public AI configuration and production acceptance are documented elsewhere in this project.

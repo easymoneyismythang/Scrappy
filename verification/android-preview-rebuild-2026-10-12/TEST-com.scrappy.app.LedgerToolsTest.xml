@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.LedgerToolsTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2026-10-12T19:49:13" hostname="895811341b68" time="0.024">
+  <properties/>
+  <testcase name="renameRetainsIdentityAndSnapshot" classname="com.scrappy.app.LedgerToolsTest" time="0.001"/>
+  <testcase name="consolidateOnlyIdenticalQuoteProvenance" classname="com.scrappy.app.LedgerToolsTest" time="0.001"/>
+  <testcase name="mergeAddsAndIsIdempotent" classname="com.scrappy.app.LedgerToolsTest" time="0.002"/>
+  <testcase name="duplicateGetsNewIdsAndCapturedPrices" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="utf8BomAndMalformedBytes" classname="com.scrappy.app.LedgerToolsTest" time="0.001"/>
+  <testcase name="mergeRejectsConflictingEstimateAndSaleIds" classname="com.scrappy.app.LedgerToolsTest" time="0.002"/>
+  <testcase name="spreadsheetCsvHasBomAndNeutralizesFormula" classname="com.scrappy.app.LedgerToolsTest" time="0.005"/>
+  <testcase name="scaleAndCapacityBounds" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="correctionRejectsFutureDate" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="mergeRoundTripRetainsOrphanReceipt" classname="com.scrappy.app.LedgerToolsTest" time="0.001"/>
+  <testcase name="invalidRenameRejected" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="copyRowAndRejectFullDraft" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="mergeDraftChoiceIsExplicit" classname="com.scrappy.app.LedgerToolsTest" time="0.001"/>
+  <testcase name="repriceRequiresEveryGradeAndRetainsWeight" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="correctionPreservesHistoricalGrossAndLabor" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="zeroMilesCorrectionDoesNotInventFuelRate" classname="com.scrappy.app.LedgerToolsTest" time="0.0"/>
+  <testcase name="sortAndClearCostsKeepItems" classname="com.scrappy.app.LedgerToolsTest" time="0.005"/>
+  <testcase name="mergeRejectsOverCapacity" classname="com.scrappy.app.LedgerToolsTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.YardComparisonTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-10-28T03:41:43" hostname="ebbc3500548c" time="0.035">
+  <properties/>
+  <testcase name="costsAndBreakEvenIncludeFuelLaborAndFees" classname="com.scrappy.app.YardComparisonTest" time="0.002"/>
+  <testcase name="tiesHaveStableAlphabeticOrder" classname="com.scrappy.app.YardComparisonTest" time="0.001"/>
+  <testcase name="reportContainsSpreadAndProvenance" classname="com.scrappy.app.YardComparisonTest" time="0.027"/>
+  <testcase name="ranksByNetRatherThanGross" classname="com.scrappy.app.YardComparisonTest" time="0.001"/>
+  <testcase name="latestQuoteIsScopedToNormalizedYard" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="missingGradeDoesNotFallBackToDemoOrOtherYard" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="invalidQuotesAreIgnored" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="emptyLoadAndTooManyYardsRejected" classname="com.scrappy.app.YardComparisonTest" time="0.001"/>
+  <testcase name="futureQuoteIsExplicitAndNotStale" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="flagsStaleAtExactly24Hours" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="yardListNormalizesDuplicatesAndRejectsBadQuotes" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="incompleteReportNeverInventsPayout" classname="com.scrappy.app.YardComparisonTest" time="0.001"/>
+  <testcase name="invalidAndDuplicateTripsRejected" classname="com.scrappy.app.YardComparisonTest" time="0.001"/>
+  <testcase name="wholeLoadUsesYardQuotesAndPreservesOriginal" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <testcase name="incompleteYardSortsAfterNegativeNet" classname="com.scrappy.app.YardComparisonTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

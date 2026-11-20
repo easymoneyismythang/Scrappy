@@ -1,0 +1,34 @@
+> Current checkpoint — October 28, 2026 (New York): GitHub and GitLab phone builds now accept the paired public `SCRAPPY_AI_ENDPOINT` and `SCRAPPY_AI_PRIVACY_URL` variables, reject incomplete/unsafe configuration, and build the separate **Scrappy Camera Test** APK. Both empty means offline testing. See LIVE_DEMO_SETUP.md. The previously supplied APK remains unconfigured; this update supplies no new APK, deployed service or live-provider acceptance. Earlier Android build evidence is in CAMERA_TEST_BUILD_2026-10-27.md.
+
+# Scrappy v4.9.6 — Android preview
+
+This update includes yard comparisons, the camera AI client/gateway and multi-yard quote storage repair. The ZIP contains source, server, tests and verification notes; it is not installable. The GitLab pipeline can generate a new Preview APK after the current source passes Android checks.
+
+## Compare receiving yards
+Open **Earnings & Profit Tools → Compare yards for my current load**. Add each yard with its own round-trip miles, vehicle MPG, fuel price, travel minutes, labor rate and fees. The comparison uses only that yard's saved quotes for the whole load, ranks complete quotes by estimated net, and shows the difference from the highest net, break-even payout, missing grades and quote-age flags. Share the comparison, update a yard, or remove it. This is a preview and changes no saved ledger data. Inputs survive screen recreation but are not permanently saved.
+
+## Existing earnings workflow
+1. Open **Earnings & Profit Tools** from home. Filter receipts by inclusive local dates, receiving yard or search text; sort and review weekly/monthly/yearly and per-yard totals. Export matching receipts or share the applied report. Tap Apply filters before exporting. Every receipt counts independently.
+2. Open **Profit targets & what-if planner**. Preview changed prices, fuel costs and round-trip miles; calculate required payout, average price, load weight and fuel-affordable distance. Enter your actual vehicle capacity for a load comparison. These calculations hold other costs and metal mix fixed; they are previews and never change your ledger.
+3. Open **Current load tools**. Review grade totals, pounds/kilograms, sources and old/missing quote dates. Scale or duplicate rows, combine identical quote rows, sort, reset costs, or explicitly reprice from your saved yard quotes. Saved estimates and sales keep their historical values. Repricing requires a quote for every grade. Returning to the ledger reloads the changed draft.
+4. Under **Mixed Loads, Trips & Sales**, rename/copy saved estimates, correct sale receipts and share receipts. Deletions can be undone until the next ledger change. Capacity stays at 100 load items, 200 estimates and 200 sales; no records are silently dropped.
+5. Under **Backup & restore ledger**, import an existing v1 JSON backup. Choose merge while keeping your current load, merge while using the imported load, or replacement. Merge previews add/skip counts, skips identical IDs and rejects conflicts or excess capacity. An independent local pre-import checkpoint allows recovery after confirmation. Export a portable backup before recovery to retain newer records.
+
+## Data and calculation limits
+All prices are USD/lb internally; 1 kg = 2.2046226218487757 lb. Prices are user-entered quote snapshots or labeled demo benchmarks, not live feeds. Fuel = miles / MPG × USD/gallon. Actual cash net = entered payout minus entered cash expenses; modeled fuel is informational and never deducted again. Labor adjustment uses the estimate's recorded travel labor. Receipt correction preserves historical estimated gross/labor. If previous mileage was zero, modeled fuel remains zero after mileage correction because no original rate was stored.
+
+Reports use the phone's local time zone. Weeks start Monday. Empty averages, zero-mile ratios and zero-estimated-payout percentages are unavailable instead of dividing by zero. All receipts count, including multiple receipts for the same estimate. Reports exclude unentered costs and taxes and do not establish taxable income. Planner weight targets assume a fixed mix/price and fixed trip costs; the distance limit models fuel while holding labor and fees fixed.
+
+Portable backups still contain only the load, estimates and receipts. They exclude contacts, settings, photos, quotes, undo and pre-import recovery checkpoints. They are unencrypted and limited to 8 MiB. Financial CSVs and reports go only to the destination/app the user chooses. Pending exports are temporarily cached, with only a small file token in saved instance state; cancellation/completion removes the snapshot, and abandoned snapshots expire on subsequent export after seven days. Cached files may be evicted by Android; a lost snapshot displays an error and requires retry.
+
+## Existing features
+Daily offline KJV Bible encouragement, chosen-city weather, in-app radar, scrapyard contacts with dialer/directions, yard quotes, metal and motor calculators, price history and reference guides. Camera captures local photos. AI upload/result code and a Gemini gateway are included, but unconfigured preview builds never upload photos. See backend/README.md for activation and production acceptance. Demo yard comparisons and benchmarks are examples. No GPS/background tracking, ads or billing is implemented.
+
+## Verification and build
+Latest verification (October 14, 2026 UTC): 169 standalone Kotlin tests passed; 154 Android unit tests and 15 JVM transport tests passed through Gradle; 21 mocked-provider gateway tests passed. testDebugUnitTest, lintDebug and assembleDebug succeeded. Lint has zero errors/fatal issues and 79 warnings. A fresh signed debug Preview APK is supplied separately; this ZIP contains source and evidence. See CAMERA_CLEANUP_BUILD_2026-10-14.md. Physical phone, live-provider and production release acceptance remain pending.
+
+Production package `com.scrappy.app`; debug Preview package `com.scrappy.app.preview`; minSdk 26; compileSdk/targetSdk 36; versionCode 55; versionName 4.9.6. Use Java 17, Gradle 8.11.1 and SDK 36, then run `./gradlew testDebugUnitTest assembleDebug lintDebug`. The Android unit-test task also runs the JVM transport suite in `transport-tests`. A Gradle 8.11.1 wrapper is included with its official distribution checksum pinned. Use `./gradlew testDebugUnitTest assembleDebug lintDebug assembleRelease`. Complete PRELAUNCH_TEST_MATRIX.md on a phone before release signing.
+
+Still required: Android verification as detailed in IMPLEMENTATION_STATUS.md; phone testing; production Gemini backend and disclosures; verified yard/live-price services or accurately limited listing; weather commercial readiness; public privacy policy and final assets; signing, Play testing and submission. No Play-ready release is claimed.
+
+For installation and safe data transfer, read INSTALL_TEST_BUILD.md. Preview starts with separate local storage and does not replace the older app.

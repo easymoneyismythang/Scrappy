@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-27",
+  "android_unit_tests": 154,
+  "transport_tests": 19,
+  "standalone_core_tests": 173,
+  "core_note": "Standalone and Gradle runs cover the same 173 cases; do not add these counts together.",
+  "gateway_tests": 27,
+  "apk_verifier_tests": 12,
+  "lint_errors": 0,
+  "lint_warnings": 77,
+  "android_instrumentation_tests_compiled": 14,
+  "android_instrumentation_tests_executed": 0,
+  "apk_contains_adaptive_upload_code": true,
+  "test_apk_contains_detailed_photo_regression": true,
+  "previous_checkpoint_signer_matches": false,
+  "ai_endpoint_configured": false,
+  "privacy_url_configured": false,
+  "connected_android_devices": 0,
+  "github_scrappy420_visibility": "public",
+  "github_scrappy_visibility": "public",
+  "github_scrappy_dash_access": "404",
+  "latest_source_uploaded_to_github": false
+}

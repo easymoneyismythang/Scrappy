@@ -1,0 +1,5 @@
+{
+  "app/src/main/java/com/scrappy/app/AiPhotoClient.kt": "225de678eaab05e5dd9bd5c80b8b4121730793b54e3b917755cd7d679855463e",
+  "app/src/main/java/com/scrappy/app/data/AiHttpClient.kt": "e097b7b021f8d28e9405d3f62ddccbe96770f3a1749140b191c6fa3fbdbec3d7",
+  "app/src/test/java/com/scrappy/app/AiHttpClientTest.kt": "8bc18b7772fd925bbf1f2f6792048e2e47285841ec9906b3b73d6b0373c3e053"
+}

@@ -1,0 +1,1 @@
+Scrappy build mode: offline camera testing; AI uploads disabled

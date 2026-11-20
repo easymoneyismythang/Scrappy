@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.PriceQuotesTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-03T08:44:51" hostname="7f2981d3ac4f" time="0.0">
+  <properties/>
+  <testcase name="newestQuoteWinsRegardlessOfListOrder" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="removedQuoteReturnsToDemo" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="zeroQuoteDoesNotFallBackToDemo" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="invalidQuotesAreRejected" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="confirmationStartsAtExactly24Hours" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="invalidStoredQuoteCannotOverrideValidQuote" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <testcase name="quoteOverridesDemoOnlyForItsMetal" classname="com.scrappy.app.PriceQuotesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

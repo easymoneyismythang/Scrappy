@@ -1,0 +1,16 @@
+Downloading kotlin-compiler-embeddable-2.0.21.jar
+Downloading kotlin-stdlib-2.0.21.jar
+Downloading kotlin-script-runtime-2.0.21.jar
+Downloading kotlin-reflect-1.6.10.jar
+Downloading trove4j-1.0.20200330.jar
+Downloading kotlinx-coroutines-core-jvm-1.6.4.jar
+Downloading annotations-13.0.jar
+Downloading junit-4.13.2.jar
+Downloading hamcrest-core-1.3.jar
+Downloading json-20240303.jar
+JUnit version 4.13.2
+.............................................................................................................................................................................
+Time: 2.441
+
+OK (173 tests)
+

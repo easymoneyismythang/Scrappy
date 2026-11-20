@@ -1,0 +1,10 @@
+package: name='com.scrappy.app.preview' versionCode='50' versionName='4.9.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+sdkVersion:'26'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.CAMERA'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='com.scrappy.app.preview.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'Scrappy Preview'
+application-label-af:'Scrappy Preview'
+application-label-am:'Scrappy Preview'
+Debug APK signature verified. Production release AAB is unsigned.

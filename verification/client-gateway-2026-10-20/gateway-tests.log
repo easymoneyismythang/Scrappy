@@ -1,0 +1,33 @@
+✔ budget persists across restarts and resets by UTC day (2.934837ms)
+✔ corrupt budget refuses startup (0.867308ms)
+✔ result rejects unsupported groups and oversized fields (0.36365ms)
+✔ JPEG POST returns only validated result and consumes one budget (33.479097ms)
+✔ invalid JPEG does not use provider budget (10.504776ms)
+✔ oversized photo rejected without provider call (7.490571ms)
+✔ wrong content type rejected (3.85937ms)
+✔ daily limit enforced for valid requests (6.014459ms)
+✔ peer limit enforced and does not trust spoofed forwarding (6.977288ms)
+✔ provider errors do not expose API keys or image contents (4.635932ms)
+✔ provider request uses image bytes, constrained schema and server-side key (1.733704ms)
+✔ blocked or truncated provider response rejected (0.590527ms)
+✔ invalid service limits refuse startup (0.894097ms)
+✔ busy service rejects excess work without charging budget and recovers after provider failure (10.553778ms)
+✔ oversized and malformed provider replies are rejected (1.180783ms)
+✔ analysis deadline aborts stalled work and frees the service for a retry (50.94009ms)
+✔ analysis deadline validation rejects invalid values (1.068045ms)
+✔ a late provider result cannot replace the timeout response (46.593503ms)
+✔ provider receives the gateway cancellation signal (0.760059ms)
+✔ disconnect aborts provider work and releases capacity even if adapter ignores cancellation (10.058187ms)
+✔ finishing a normal response does not cancel a successful provider call (3.066338ms)
+✔ stalled upload times out without provider charge and releases capacity (158.899776ms)
+✔ trickling bytes cannot extend the upload deadline (154.955429ms)
+✔ disconnect during upload releases capacity without spending provider budget (7.031273ms)
+✔ upload deadline validation rejects invalid values (1.621146ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 616.993076

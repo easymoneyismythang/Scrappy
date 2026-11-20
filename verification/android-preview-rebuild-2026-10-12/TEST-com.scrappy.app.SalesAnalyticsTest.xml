@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.SalesAnalyticsTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-10-12T19:49:13" hostname="895811341b68" time="0.02">
+  <properties/>
+  <testcase name="totalsDoNotDeductModeledFuelTwice" classname="com.scrappy.app.SalesAnalyticsTest" time="0.008"/>
+  <testcase name="oldestSort" classname="com.scrappy.app.SalesAnalyticsTest" time="0.004"/>
+  <testcase name="invalidRangeRejected" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="yearGroupsNewestFirst" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="perMileCalculations" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="weeklyGroupsStartMondayAcrossYear" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="payoutSort" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="netSortAllowsLosses" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="accuracyAndDstBoundary" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="dateFilterIsInclusive" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="searchMatchesYard" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="monthGroupsUseLocalDate" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="averagesIncludeLosses" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="yardGroupingNormalizesNames" classname="com.scrappy.app.SalesAnalyticsTest" time="0.001"/>
+  <testcase name="endDateUsesLocalMidnight" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="searchMatchesReceiptId" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="searchMatchesEstimateId" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="zeroDenominatorsAreUnavailable" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="newestSort" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <testcase name="exactYardIgnoresCaseAndWhitespace" classname="com.scrappy.app.SalesAnalyticsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,4 @@
+22 Kotlin files parsed with no syntax errors.
+3 Android XML files parsed.
+Package/version/ledger entry-point checks passed.
+Android Gradle compilation, lint and device verification not run.

@@ -1,0 +1,9 @@
+{
+  "python_tests_passed": 33,
+  "gateway_tests_passed": 32,
+  "release_checks": "passed",
+  "android_build": "blocked at Gradle download: Network is unreachable",
+  "android_regressions_added": 2,
+  "android_regressions_executed": false,
+  "new_apk": false
+}

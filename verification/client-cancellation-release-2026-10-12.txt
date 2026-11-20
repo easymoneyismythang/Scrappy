@@ -1,0 +1,2 @@
+PASS: release configuration gate is wired for AI endpoint + privacy URL safety
+RELEASE CONSISTENCY: PASS — Android 4.9.6 (55) handoff docs aligned

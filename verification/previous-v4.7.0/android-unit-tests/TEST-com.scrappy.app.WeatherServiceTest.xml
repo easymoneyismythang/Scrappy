@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.WeatherServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-03T08:44:51" hostname="7f2981d3ac4f" time="0.001">
+  <properties/>
+  <testcase name="unknownCodesDoNotClaimClearWeather" classname="com.scrappy.app.WeatherServiceTest" time="0.001"/>
+  <testcase name="mapsThunderstormAndSnow" classname="com.scrappy.app.WeatherServiceTest" time="0.0"/>
+  <testcase name="rejectsCoordinatesBeforeNetworkRequest" classname="com.scrappy.app.WeatherServiceTest" time="0.0"/>
+  <testcase name="distinguishesDayAndNightClearSky" classname="com.scrappy.app.WeatherServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.ResponseDeadlineTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-12T19:49:13" hostname="895811341b68" time="0.003">
+  <properties/>
+  <testcase name="slowTrickleCannotExtendTheBudget" classname="com.scrappy.app.ResponseDeadlineTest" time="0.001"/>
+  <testcase name="checksDeadlineAfterZeroReadFallbackAndEof" classname="com.scrappy.app.ResponseDeadlineTest" time="0.001"/>
+  <testcase name="acceptsTimelyResponseIncludingShortReads" classname="com.scrappy.app.ResponseDeadlineTest" time="0.001"/>
+  <testcase name="roundsPositiveBudgetUpAndExpiresAtDeadline" classname="com.scrappy.app.ResponseDeadlineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

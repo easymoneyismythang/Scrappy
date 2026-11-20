@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.CalculationsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-04T01:14:47" hostname="90400bc8ae48" time="0.001">
+  <properties/>
+  <testcase name="zeroCopperUsesOnlySteelValue" classname="com.scrappy.app.CalculationsTest" time="0.0"/>
+  <testcase name="rejectsNegativeWeight" classname="com.scrappy.app.CalculationsTest" time="0.0"/>
+  <testcase name="rejectsNonFinitePrice" classname="com.scrappy.app.CalculationsTest" time="0.0"/>
+  <testcase name="rejectsImpossibleCopperPercentage" classname="com.scrappy.app.CalculationsTest" time="0.0"/>
+  <testcase name="laborCanMakeStrippingLessProfitable" classname="com.scrappy.app.CalculationsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

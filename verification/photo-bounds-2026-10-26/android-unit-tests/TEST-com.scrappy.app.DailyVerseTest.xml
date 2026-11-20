@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.DailyVerseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T01:08:14" hostname="91909346cab2" time="0.005">
+  <properties/>
+  <testcase name="changesAcrossMonthYearAndLeapDay" classname="com.scrappy.app.DailyVerseTest" time="0.005"/>
+  <testcase name="allQuotesAppearBeforeRepeating" classname="com.scrappy.app.DailyVerseTest" time="0.0"/>
+  <testcase name="stableOnSameDate" classname="com.scrappy.app.DailyVerseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

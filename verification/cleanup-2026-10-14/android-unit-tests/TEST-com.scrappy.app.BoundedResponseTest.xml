@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.BoundedResponseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-14T03:04:30" hostname="392256166d14" time="0.011">
+  <properties/>
+  <testcase name="stopsAfterOneExcessByte" classname="com.scrappy.app.BoundedResponseTest" time="0.001"/>
+  <testcase name="acceptsEmptyAndExactLimit" classname="com.scrappy.app.BoundedResponseTest" time="0.008"/>
+  <testcase name="rejectsInvalidLimit" classname="com.scrappy.app.BoundedResponseTest" time="0.0"/>
+  <testcase name="handlesShortAndZeroLengthReads" classname="com.scrappy.app.BoundedResponseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

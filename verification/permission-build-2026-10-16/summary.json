@@ -1,0 +1,30 @@
+{
+  "apk": "Scrappy-v4.9.6-permission-recovery-preview.apk",
+  "size_bytes": 7173434,
+  "sha256": "a15a0fe823ec080578fe9e7d7fa09056f9a072489865bec59349c607117776bb",
+  "android_unit_tests": {
+    "tests": 154,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "jvm_transport_tests": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Fatal": 0,
+    "Error": 0,
+    "Warning": 79,
+    "Information": 0
+  },
+  "build_successful": true,
+  "live_ai_configured": false,
+  "physical_device_tested": false,
+  "source_sha256": {
+    "app/src/main/java/com/scrappy/app/CameraActivity.kt": "96cd933cd0d974dbc81c829e7731e62522c48a9f9ae5bd992f13a9679ebedd71",
+    "backend/server.test.mjs": "3e48924ad97e71cefb31e8c572574e42e6be1ed8e9d76397488045874f05cfc8"
+  }
+}

@@ -1,0 +1,1 @@
+Compare yards using your saved metal quotes and each trip’s costs. Quotes are now kept separately for each yard. Camera review has improved recovery and cleanup. AI connection code is included; this test build keeps uploads disabled until a production service and privacy policy are configured.

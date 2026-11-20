@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.TripLedgerTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-10-28T03:41:43" hostname="ebbc3500548c" time="0.005">
+  <properties/>
+  <testcase name="invalidUnitsWeightsAndGradesAreRejected" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="invalidCostsAreRejected" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="csvNeutralizesFormulaPrefixes" classname="com.scrappy.app.TripLedgerTest" time="0.002"/>
+  <testcase name="demoItemIsExplicitAndZeroQuoteIsPreserved" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="saleSeparatesCashNetFromEstimatedLabor" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="quoteIsCapturedAndNotRepriced" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="csvEscapesCommaQuotesAndNewlines" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="negativeNetIsNotClampedToZero" classname="com.scrappy.app.TripLedgerTest" time="0.001"/>
+  <testcase name="zeroCostTripWorks" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="mixedLoadSubtractsFuelLaborAndFees" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="editWeightRetainsSourceAndPrice" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="receiptKeepsActualMilesAndModelsFuelWithoutDeductingItTwice" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="emptyEstimateAndInvalidSaleAreRejected" classname="com.scrappy.app.TripLedgerTest" time="0.001"/>
+  <testcase name="kilogramConversionPreservesValue" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="zeroPayoutAndLossAreAllowed" classname="com.scrappy.app.TripLedgerTest" time="0.0"/>
+  <testcase name="duplicateItemIdsAndOversizedLoadsAreRejected" classname="com.scrappy.app.TripLedgerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

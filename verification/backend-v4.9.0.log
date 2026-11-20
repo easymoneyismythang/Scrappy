@@ -1,0 +1,20 @@
+✔ budget persists across restarts and resets by UTC day (2.296333ms)
+✔ corrupt budget refuses startup (0.590636ms)
+✔ result rejects unsupported groups and oversized fields (0.242854ms)
+✔ JPEG POST returns only validated result and consumes one budget (26.802394ms)
+✔ invalid JPEG does not use provider budget (7.238223ms)
+✔ oversized photo rejected without provider call (6.191333ms)
+✔ wrong content type rejected (3.130975ms)
+✔ daily limit enforced for valid requests (8.392043ms)
+✔ peer limit enforced and does not trust spoofed forwarding (4.217473ms)
+✔ provider errors do not expose API keys or image contents (4.285786ms)
+✔ provider request uses image bytes, constrained schema and server-side key (1.162063ms)
+✔ blocked or truncated provider response rejected (0.42023ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.019504

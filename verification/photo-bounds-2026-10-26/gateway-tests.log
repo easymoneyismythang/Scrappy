@@ -1,0 +1,35 @@
+✔ budget persists across restarts and resets by UTC day (4.965105ms)
+✔ corrupt budget refuses startup (0.76446ms)
+✔ result rejects unsupported groups and oversized fields (0.34495ms)
+✔ JPEG POST returns only validated result and consumes one budget (42.497396ms)
+✔ invalid JPEG does not use provider budget (12.055059ms)
+✔ oversized photo rejected without provider call (9.313347ms)
+✔ wrong content type rejected (4.512285ms)
+✔ daily limit enforced for valid requests (5.846198ms)
+✔ peer limit enforced and does not trust spoofed forwarding (6.102447ms)
+✔ provider errors do not expose API keys or image contents (4.653465ms)
+✔ provider request uses image bytes, constrained schema and server-side key (1.471047ms)
+✔ blocked or truncated provider response rejected (0.40576ms)
+✔ invalid service limits refuse startup (0.757962ms)
+✔ busy service rejects excess work without charging budget and recovers after provider failure (8.096156ms)
+✔ oversized and malformed provider replies are rejected (1.134438ms)
+✔ analysis deadline aborts stalled work and frees the service for a retry (48.30713ms)
+✔ analysis deadline validation rejects invalid values (1.585335ms)
+✔ a late provider result cannot replace the timeout response (45.323207ms)
+✔ provider receives the gateway cancellation signal (0.701879ms)
+✔ disconnect aborts provider work and releases capacity even if adapter ignores cancellation (11.428161ms)
+✔ finishing a normal response does not cancel a successful provider call (3.185602ms)
+✔ stalled upload times out without provider charge and releases capacity (157.719574ms)
+✔ trickling bytes cannot extend the upload deadline (155.918481ms)
+✔ disconnect during upload releases capacity without spending provider budget (8.411893ms)
+✔ upload deadline validation rejects invalid values (1.193325ms)
+✔ provider HTTP failures cancel unread response bodies before a retry (1.538005ms)
+✔ provider body cancellation failure does not expose private error details (0.519869ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 630.033498

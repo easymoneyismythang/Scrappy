@@ -1,0 +1,354 @@
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/AiPhotoClient.kt:6: Warning: Avoid using android.media.ExifInterface; use androidx.exifinterface.media.ExifInterface instead [ExifInterface]
+import android.media.ExifInterface
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ExifInterface":
+   The android.media.ExifInterface implementation has some known security bugs
+   in older versions of Android. There is a new implementation available of
+   this library in the support library, which is preferable.
+
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:41: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.15.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:42: Warning: A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.8.0 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:43: Warning: A newer version of com.google.android.material:material than 1.12.0 is available: 1.14.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.12.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:44: Warning: A newer version of androidx.activity:activity-ktx than 1.10.1 is available: 1.13.0 [GradleDependency]
+    implementation("androidx.activity:activity-ktx:1.10.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:45: Warning: A newer version of androidx.camera:camera-core than 1.4.1 is available: 1.6.2 [GradleDependency]
+    implementation("androidx.camera:camera-core:1.4.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:46: Warning: A newer version of androidx.camera:camera-camera2 than 1.4.1 is available: 1.6.2 [GradleDependency]
+    implementation("androidx.camera:camera-camera2:1.4.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:47: Warning: A newer version of androidx.camera:camera-lifecycle than 1.4.1 is available: 1.6.2 [GradleDependency]
+    implementation("androidx.camera:camera-lifecycle:1.4.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/build.gradle.kts:48: Warning: A newer version of androidx.camera:camera-view than 1.4.1 is available: 1.6.2 [GradleDependency]
+    implementation("androidx.camera:camera-view:1.4.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspace/scratch/28e9372070fe/project/app/src/main/AndroidManifest.xml:9: Warning: Expecting android:screenOrientation="unspecified" or "fullSensor" for this activity so the user can use the application in any orientation and provide a great experience on Chrome OS devices [LockedOrientationActivity]
+        <activity android:name=".CameraActivity" android:screenOrientation="portrait" android:exported="false"/>
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/AndroidManifest.xml:10: Warning: Expecting android:screenOrientation="unspecified" or "fullSensor" for this activity so the user can use the application in any orientation and provide a great experience on Chrome OS devices [LockedOrientationActivity]
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" android:exported="true">
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "LockedOrientationActivity":
+   The <activity> element should not be locked to any orientation so that
+   users can take advantage of the multi-window environments and larger
+   screens available on Android. To fix the issue, consider declaring the
+   corresponding activity element with `screenOrientation="unspecified"`or
+   fullSensor attribute.
+
+   https://developer.android.com/topic/arc/window-management
+
+/workspace/scratch/28e9372070fe/project/app/src/main/AndroidManifest.xml:9: Warning: Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed. [DiscouragedApi]
+        <activity android:name=".CameraActivity" android:screenOrientation="portrait" android:exported="false"/>
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/AndroidManifest.xml:10: Warning: Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed. [DiscouragedApi]
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" android:exported="true">
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DiscouragedApi":
+   Discouraged APIs are allowed and are not deprecated, but they may be unfit
+   for common use (e.g. due to slow performance or subtle behavior).
+
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:24: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
+            javaScriptEnabled=true;domStorageEnabled=true
+            ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetJavaScriptEnabled":
+   Your code should not invoke setJavaScriptEnabled if you are not sure that
+   your app really requires JavaScript support.
+
+   https://goo.gle/SetJavaScriptEnabled
+   https://developer.android.com/training/articles/security-tips
+
+/workspace/scratch/28e9372070fe/project/app/src/main/AndroidManifest.xml:5: Warning: Should explicitly set android:icon, there is no default [MissingApplicationIcon]
+    <application android:theme="@style/Theme.Scrappy" android:label="${scrappyLabel}" android:allowBackup="false" android:fullBackupContent="false" android:dataExtractionRules="@xml/data_extraction_rules" android:supportsRtl="true" android:usesCleartextTraffic="false">
+     ~~~~~~~~~~~
+
+   Explanation for issues of type "MissingApplicationIcon":
+   You should set an icon for the application as whole because there is no
+   default. This attribute must be set as a reference to a drawable resource
+   containing the image (for example @drawable/icon).
+
+   https://developer.android.com/studio/publish/preparing#publishing-configure
+
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:176: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+            .setNeutralButton("Privacy policy") { _,_ -> openExternal(Intent(Intent.ACTION_VIEW,Uri.parse(BuildConfig.AI_PRIVACY_URL))) }
+                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/LedgerStore.kt:15: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        val editor = prefs.edit().putString("draft",draftJson).putString("estimates",estimatesJson)
+                     ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/LedgerStore.kt:23: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+    private fun write(key: String, value: String) { check(prefs.edit().putString(key,value).remove("undo").commit()) { "Could not save on this device" } }
+                                                          ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/LedgerStore.kt:43: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        check(prefs.edit().putString(key,value).putString("undo",before).commit()) { "Could not delete on this device" }
+              ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:177: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+        button(l,"Find scrapyards near me"){openExternal(Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q="+Uri.encode("scrap metal recycling near me"))))}
+                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:189: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+            if(contact.address.isNotBlank())button(l,"Directions"){openExternal(Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q="+Uri.encode(contact.address))))}
+                                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:17: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putString("contacts",array.toString()).apply()
+        ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:26: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putString("weather_place",JSONObject().put("name",place.name).put("lat",place.latitude).put("lon",place.longitude).toString()).remove("weather_cache").apply()
+        ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:28: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+    fun clearWeatherPlace(){p.edit().remove("weather_place").remove("weather_cache").apply()}
+                            ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:30: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+    fun saveWeatherCache(value:String){p.edit().putString("weather_cache",value).apply()}
+                                       ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:46: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putString("price_quotes", array.toString()).apply()
+        ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:53: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putString("price_quotes", array.toString()).apply()
+        ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:59: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putStringSet("favorite_yards", s).apply(); return now
+        ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:62: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+    fun setDefaultMetal(v:String) = p.edit().putString("default_metal", v).apply()
+                                    ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:64: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+    fun setLaborRate(v:Double) { require(v.isFinite() && v in 0.0..10_000.0);p.edit().putFloat("labor_rate",v.toFloat()).apply() }
+                                                                             ~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/data/Prefs.kt:70: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        p.edit().putString("history_v2",array.toString()).remove("history").apply()
+        ~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:55: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(TextView(this).apply{text="Metal Photo";textSize=25f})
+                                                ~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:58: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusView=TextView(this).apply{text="Fill the frame with one clean metal item in bright, even light. Avoid hands, faces, license plates, and unrelated objects.";setPadding(0,12,0,12)};root.addView(ScrollView(this).apply{addView(statusView)},LinearLayout.LayoutParams(-1,(160*resources.displayMetrics.density).toInt()))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:59: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        captureButton=Button(this).apply{text="Capture photo";setOnClickListener{capture()}};root.addView(captureButton)
+                                               ~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:60: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        retakeButton=Button(this).apply{text="Retake";visibility=View.GONE;setOnClickListener{showCamera()}};root.addView(retakeButton)
+                                              ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:61: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        identifyButton=Button(this).apply{text="Use identification helper";visibility=View.GONE;setOnClickListener{startActivity(Intent(this@CameraActivity,MainActivity::class.java).putExtra("open_identifier",true));finish()}};root.addView(identifyButton)
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:62: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        aiButton=Button(this).apply{text="Analyze with AI";visibility=View.GONE;setOnClickListener{requestAnalysis()}};root.addView(aiButton)
+                                          ~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/CameraActivity.kt:63: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(Button(this).apply{text="Back";setOnClickListener{finish()}})
+                                              ~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:208: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+                    if(value!=null && value.isFinite() && value>=0) weight.setText((if(next=="kg") value/TripLedger.LB_PER_KG else value*TripLedger.LB_PER_KG).toString())
+                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:208: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+                    if(value!=null && value.isFinite() && value>=0) weight.setText((if(next=="kg") value/TripLedger.LB_PER_KG else value*TripLedger.LB_PER_KG).toString())
+                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:240: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                val edit=EditText(this).apply { setText(e.name.take(113)+" (copy)");filters=arrayOf(android.text.InputFilter.LengthFilter(120)) }
+                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:240: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                val edit=EditText(this).apply { setText(e.name.take(113)+" (copy)");filters=arrayOf(android.text.InputFilter.LengthFilter(120)) }
+                                                                          ~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:268: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                soldAt=picked.timeInMillis.coerceAtMost(System.currentTimeMillis());selected.text="Sale date: ${date(soldAt)}"
+                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:268: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                soldAt=picked.timeInMillis.coerceAtMost(System.currentTimeMillis());selected.text="Sale date: ${date(soldAt)}"
+                                                                                                   ~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:291: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                selected.text="Sale date: ${date(soldAt)}"
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/LedgerActivity.kt:291: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                selected.text="Sale date: ${date(soldAt)}"
+                               ~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:40: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text="Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)"}
+                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:40: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text="Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)"}
+                                                                           ~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:40: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    private fun refreshQuote(){val v=DailyVerse.forDate();homeQuote?.text="Daily encouragement\n\n“${v.words}”\n— ${v.reference} (KJV)"}
+                                                                                                                                ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:75: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        val place=prefs.weatherPlace() ?: run{target.text="🌤 Weather — choose your city";return}
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                  ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                                                      ~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                                                                                               ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                                                                                                                                             ~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        out.text="Sell whole: ${money(result.whole)}\nSeparated gross: ${money(result.gross)}\nEstimated labor cost: ${money(result.labor)}\nSeparated net: ${money(result.net)}\nDifference vs whole: ${money(result.net-result.whole)}\n\n${priceSource("Copper #2")}\n${priceSource("Steel")}\n\nAssumes all remaining weight is saleable steel. Confirm winding material, recovery and current yard prices before stripping."};back(l);setContentView(sv)}
+                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:170: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+    private fun showLoadValue(){val sv=root("Load Value Calculator");val l=body(sv);val sp=metalSpinner();l.addView(sp);val wt=number("Weight (lb)");l.addView(wt);val out=TextView(this).apply{textSize=19f};l.addView(out);button(l,"Estimate load value"){val m=sp.selectedItem.toString();val w=valid(wt,"Weight") ?: return@button;out.text="$m × ${String.format(Locale.US,"%.2f",w)} lb = ${money(w*selectedPrice(m))}\n${priceSource(m)}"};button(l,"Share estimate"){val s=out.text.toString();if(s.isNotBlank())openExternal(Intent.createChooser(Intent(Intent.ACTION_SEND).apply{type="text/plain";putExtra(Intent.EXTRA_TEXT,"Scrappy estimate: $s")},"Share Scrappy estimate"))};back(l);setContentView(sv)}
+                                                                                                                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/MainActivity.kt:170: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    private fun showLoadValue(){val sv=root("Load Value Calculator");val l=body(sv);val sp=metalSpinner();l.addView(sp);val wt=number("Weight (lb)");l.addView(wt);val out=TextView(this).apply{textSize=19f};l.addView(out);button(l,"Estimate load value"){val m=sp.selectedItem.toString();val w=valid(wt,"Weight") ?: return@button;out.text="$m × ${String.format(Locale.US,"%.2f",w)} lb = ${money(w*selectedPrice(m))}\n${priceSource(m)}"};button(l,"Share estimate"){val s=out.text.toString();if(s.isNotBlank())openExternal(Intent.createChooser(Intent(Intent.ACTION_SEND).apply{type="text/plain";putExtra(Intent.EXTRA_TEXT,"Scrappy estimate: $s")},"Share Scrappy estimate"))};back(l);setContentView(sv)}
+                                                                                                                                                                                                                                                                                                                                                                                           ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:19: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(TextView(this).apply{text="Weather Radar • NOAA/NWS";textSize=23f})
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:20: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(TextView(this).apply{text="U.S. radar coverage. Use the map’s play control to animate precipitation. Internet required."})
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:21: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        val status=TextView(this).apply{text="Loading radar…"};root.addView(status)
+                                              ~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:34: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            override fun onPageFinished(view:WebView,url:String){if(!pageFailed)status.text="NOAA/NWS • Check the radar timestamp for freshness."}
+                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:34: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            override fun onPageFinished(view:WebView,url:String){if(!pageFailed)status.text="NOAA/NWS • Check the radar timestamp for freshness."}
+                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:36: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                if(request.isForMainFrame){pageFailed=true;status.text="Radar unavailable. Check your internet connection, then tap Retry."}
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:36: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                if(request.isForMainFrame){pageFailed=true;status.text="Radar unavailable. Check your internet connection, then tap Retry."}
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:39: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                if(request.isForMainFrame){pageFailed=true;status.text="Radar service unavailable. Tap Retry to try again."}
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:39: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                if(request.isForMainFrame){pageFailed=true;status.text="Radar service unavailable. Tap Retry to try again."}
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:43: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(Button(this).apply{text="Retry / Refresh";setOnClickListener{pageFailed=false;status.text="Loading radar…";web.reload()}})
+                                              ~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:43: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(Button(this).apply{text="Retry / Refresh";setOnClickListener{pageFailed=false;status.text="Loading radar…";web.reload()}})
+                                                                                                                ~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/RadarActivity.kt:44: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        root.addView(Button(this).apply{text="Back to Scrappy";setOnClickListener{finish()}})
+                                              ~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:132: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text="From: ${start ?: "Any"} • Through: ${end ?: "Any"}" },d.year,d.monthValue-1,d.dayOfMonth).show()
+                                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:132: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text="From: ${start ?: "Any"} • Through: ${end ?: "Any"}" },d.year,d.monthValue-1,d.dayOfMonth).show()
+                                                                                               ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:132: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            DatePickerDialog(this,{ _,y,m,day -> selected(LocalDate.of(y,m+1,day));dates.text="From: ${start ?: "Any"} • Through: ${end ?: "Any"}" },d.year,d.monthValue-1,d.dayOfMonth).show()
+                                                                                                                      ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:137: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        button(box,"Use this month") { start=today.withDayOfMonth(1);end=today;dates.text="From: $start • Through: $end" }
+                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:137: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        button(box,"Use this month") { start=today.withDayOfMonth(1);end=today;dates.text="From: $start • Through: $end" }
+                                                                                           ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:137: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        button(box,"Use this month") { start=today.withDayOfMonth(1);end=today;dates.text="From: $start • Through: $end" }
+                                                                                                       ~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:138: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        button(box,"Use this week") { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text="From: $start • Through: $end" }
+                                                                                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:138: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        button(box,"Use this week") { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text="From: $start • Through: $end" }
+                                                                                                                      ~~~~~~
+/workspace/scratch/28e9372070fe/project/app/src/main/java/com/scrappy/app/WorkbenchActivity.kt:138: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        button(box,"Use this week") { start=today.minusDays((today.dayOfWeek.value-1).toLong());end=today;dates.text="From: $start • Through: $end" }
+                                                                                                                                  ~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 80 warnings

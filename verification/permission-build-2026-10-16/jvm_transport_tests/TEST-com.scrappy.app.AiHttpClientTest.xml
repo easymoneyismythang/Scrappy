@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.scrappy.app.AiHttpClientTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-10-16T22:21:08" hostname="85c8943461f8" time="0.661">
+  <properties/>
+  <testcase name="timeoutHasActionableMessageAndCompletedRequestDetaches" classname="com.scrappy.app.AiHttpClientTest" time="0.029"/>
+  <testcase name="overallDeadlineDisconnectsRealHttpWhileServerWithholdsHeaders" classname="com.scrappy.app.AiHttpClientTest" time="0.281"/>
+  <testcase name="cancellationReleasesRealHttpWorkerWaitingForResponseHeaders" classname="com.scrappy.app.AiHttpClientTest" time="0.005"/>
+  <testcase name="statusesDoNotReadOrExposeErrorBodyAndAlwaysDisconnect" classname="com.scrappy.app.AiHttpClientTest" time="0.009"/>
+  <testcase name="deadlineRejectsBodyFromAdapterThatIgnoresDisconnect" classname="com.scrappy.app.AiHttpClientTest" time="0.102"/>
+  <testcase name="cancellationAfterHeadersStopsBodyReadEvenWhenDisconnectDoesNothing" classname="com.scrappy.app.AiHttpClientTest" time="0.001"/>
+  <testcase name="redirectDoesNotResendPhoto" classname="com.scrappy.app.AiHttpClientTest" time="0.049"/>
+  <testcase name="unsafeEndpointInvalidSizeAndCancelledRequestNeverOpenConnection" classname="com.scrappy.app.AiHttpClientTest" time="0.001"/>
+  <testcase name="throwingCleanupPreservesSuccessfulResultAndDetachesCancellation" classname="com.scrappy.app.AiHttpClientTest" time="0.015"/>
+  <testcase name="sendsExactPhotoAndHeadersThenParsesResult" classname="com.scrappy.app.AiHttpClientTest" time="0.008"/>
+  <testcase name="overallDeadlineReleasesBlockedUploadAndExplainsTimeout" classname="com.scrappy.app.AiHttpClientTest" time="0.102"/>
+  <testcase name="throwingCleanupPreservesUserCancellation" classname="com.scrappy.app.AiHttpClientTest" time="0.002"/>
+  <testcase name="cancellationAtEndOfUploadStopsResponseWait" classname="com.scrappy.app.AiHttpClientTest" time="0.002"/>
+  <testcase name="oversizedAndMalformedResponsesAreRejectedOverHttp" classname="com.scrappy.app.AiHttpClientTest" time="0.052"/>
+  <testcase name="throwingCleanupPreservesOriginalRequestFailure" classname="com.scrappy.app.AiHttpClientTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

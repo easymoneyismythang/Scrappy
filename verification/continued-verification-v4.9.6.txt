@@ -1,0 +1,87 @@
+PASS: release configuration gate is wired for AI endpoint + privacy URL safety
+
+> scrappy-ai-gateway@4.9.5 test
+> node --test server.test.mjs
+
+TAP version 13
+# Subtest: budget persists across restarts and resets by UTC day
+ok 1 - budget persists across restarts and resets by UTC day
+  ---
+  duration_ms: 3.551259
+  type: 'test'
+  ...
+# Subtest: corrupt budget refuses startup
+ok 2 - corrupt budget refuses startup
+  ---
+  duration_ms: 0.793437
+  type: 'test'
+  ...
+# Subtest: result rejects unsupported groups and oversized fields
+ok 3 - result rejects unsupported groups and oversized fields
+  ---
+  duration_ms: 0.298701
+  type: 'test'
+  ...
+# Subtest: JPEG POST returns only validated result and consumes one budget
+ok 4 - JPEG POST returns only validated result and consumes one budget
+  ---
+  duration_ms: 32.869422
+  type: 'test'
+  ...
+# Subtest: invalid JPEG does not use provider budget
+ok 5 - invalid JPEG does not use provider budget
+  ---
+  duration_ms: 12.529508
+  type: 'test'
+  ...
+# Subtest: oversized photo rejected without provider call
+ok 6 - oversized photo rejected without provider call
+  ---
+  duration_ms: 7.484735
+  type: 'test'
+  ...
+# Subtest: wrong content type rejected
+ok 7 - wrong content type rejected
+  ---
+  duration_ms: 4.24087
+  type: 'test'
+  ...
+# Subtest: daily limit enforced for valid requests
+ok 8 - daily limit enforced for valid requests
+  ---
+  duration_ms: 7.41511
+  type: 'test'
+  ...
+# Subtest: peer limit enforced and does not trust spoofed forwarding
+ok 9 - peer limit enforced and does not trust spoofed forwarding
+  ---
+  duration_ms: 7.697737
+  type: 'test'
+  ...
+# Subtest: provider errors do not expose API keys or image contents
+ok 10 - provider errors do not expose API keys or image contents
+  ---
+  duration_ms: 6.359086
+  type: 'test'
+  ...
+# Subtest: provider request uses image bytes, constrained schema and server-side key
+ok 11 - provider request uses image bytes, constrained schema and server-side key
+  ---
+  duration_ms: 1.32566
+  type: 'test'
+  ...
+# Subtest: blocked or truncated provider response rejected
+ok 12 - blocked or truncated provider response rejected
+  ---
+  duration_ms: 0.546635
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 184.173436
