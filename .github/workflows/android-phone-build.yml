@@ -1,0 +1,108 @@
+name: Build Scrappy phone APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-gateway:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test camera AI gateway
+        run: node --test backend/server.test.mjs
+
+  build-phone-apk:
+    needs: verify-gateway
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install Android build packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdk_manager="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          test -x "$sdk_manager"
+          "$sdk_manager" 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
+      - name: Restore Gradle wrapper jar if missing (text-only push)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f gradle/wrapper/gradle-wrapper.jar ]; then
+            echo "Wrapper jar present, nothing to do."
+            exit 0
+          fi
+          echo "Wrapper jar missing (text-only snapshot push). Bootstrapping Gradle 8.11.1 to regenerate it."
+          curl -fsSL -o /tmp/gradle-8.11.1-bin.zip https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+          echo "f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6  /tmp/gradle-8.11.1-bin.zip" | sha256sum -c -
+          unzip -q /tmp/gradle-8.11.1-bin.zip -d /tmp
+          /tmp/gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --distribution-type bin --gradle-distribution-sha256-sum f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6
+          test -f gradle/wrapper/gradle-wrapper.jar
+          echo "Wrapper jar regenerated."
+      - name: Check release configuration and version consistency
+        run: |
+          python3 scripts/check_release_config.py
+          python3 scripts/check_release_consistency.py
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Test, lint and build preview APK
+        env:
+          SCRAPPY_AI_ENDPOINT: ${{ vars.SCRAPPY_AI_ENDPOINT }}
+          SCRAPPY_AI_PRIVACY_URL: ${{ vars.SCRAPPY_AI_PRIVACY_URL }}
+        run: python3 scripts/build_phone_test.py
+      - name: Verify APK signature and record install metadata
+        run: |
+          python3 scripts/verify_phone_apk.py app/build/outputs/apk/debug/app-debug.apk \
+            --aapt "$ANDROID_HOME/build-tools/35.0.0/aapt" \
+            --apksigner "$ANDROID_HOME/build-tools/35.0.0/apksigner" \
+            --output verification/phone-apk.json
+          python3 scripts/verify_phone_apk.py app/build/outputs/apk/cameraTest/app-cameraTest.apk \
+            --variant camera-test \
+            --aapt "$ANDROID_HOME/build-tools/35.0.0/aapt" \
+            --apksigner "$ANDROID_HOME/build-tools/35.0.0/apksigner" \
+            --output verification/camera-test-apk.json
+      - name: Upload installable preview APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Scrappy-phone-preview
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload separate camera test APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Scrappy-camera-test
+          path: app/build/outputs/apk/cameraTest/app-cameraTest.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload Android verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Scrappy-Android-test-reports
+          path: |
+            verification/phone-apk.json
+            verification/camera-test-apk.json
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/test-results/testDebugUnitTest/
+            app/build/reports/tests/testCameraTestUnitTest/
+            app/build/test-results/testCameraTestUnitTest/
+            app/build/reports/lint-results-*
+          if-no-files-found: warn
+          retention-days: 30
