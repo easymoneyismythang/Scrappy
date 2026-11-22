@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Scrappy Privacy Policy</title><style>body{font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.6;color:#222}h1{font-size:1.6rem}h2{font-size:1.2rem;margin-top:1.8rem}</style></head><body>
+<h1>Scrappy Privacy Policy — v4.9.6 ready draft (prepared 2026-11-21)</h1>
+
+<p><strong>Effective date:</strong> [Effective date to be set at publication]</p>
+<p><strong>Developer:</strong> Matt Jones</p>
+<p><strong>Contact:</strong> easymoneyismythang@gmail.com (confirmed by Matt 2026-11-22)</p>
+
+<p>Scrappy is a scrap-metal identification and estimating app. This policy describes the information handled by the v4.9.6 release.</p>
+
+<h2>Information stored on your device</h2>
+<p>Scrappy stores app settings, favorites, manual scrapyard contacts, your selected weather city and recent weather information, user-entered yard quotes and price snapshots, mixed-load information, trip-cost inputs, saved estimates, and actual sale records on your device. Ledger recovery/undo data may also be stored locally. Android app backup is disabled.</p>
+
+<p>Camera photos are kept in temporary app storage for the camera workflow. Closing the camera removes its current photo, and the app includes cleanup for abandoned temporary photos. Information you deliberately export or share is sent to the file location, cloud document provider, or other app you choose and is then governed by that destination.</p>
+
+<h2>AI metal identification</h2>
+<p>Scrappy's production release is configured with a Scrappy-operated HTTPS AI gateway. A camera image is not sent for AI analysis merely by taking the photo. Before each AI upload, Scrappy presents a consent action. If you choose <strong>Send and analyze</strong>, the app creates a resized and re-encoded JPEG copy and sends it to the configured Scrappy service for processing with Google Gemini. Original EXIF metadata is not intentionally included in that re-encoded copy, although information visibly present in the image remains visible.</p>
+
+<p>The Android app does not contain the Gemini API key. The supplied Scrappy gateway server creates no image, prompt, or model-response files or logs, and persists only the UTC day and a request count for its daily budget. [Production host and its log-retention details to be added at deployment.]</p>
+
+<p>AI identification is a visual estimate and is not laboratory analysis, guaranteed alloy identification, or a scrapyard grade decision.</p>
+
+<h2>Weather and radar</h2>
+<p>When you search for a weather city, the search text is sent to Open-Meteo. Weather requests send the latitude and longitude of the city you selected. Scrappy does not request Android GPS location permission.</p>
+
+<p>Opening radar loads the U.S. National Weather Service radar website inside the app. That service receives normal web-request information and the selected map location and may use website storage.</p>
+
+<h2>Calls, directions, and nearby-yard searches</h2>
+<p>Calling opens your phone dialer. Directions and nearby-yard searches open an external map application. Those applications and services control their own data handling after the handoff.</p>
+
+<h2>Price and financial estimates</h2>
+<p>User-entered metal prices, yard names, quote times, price snapshots, load estimates, trip costs, and sale records are stored locally unless you choose to export or share them. Scrappy prices and calculations are estimates and are not guaranteed offers or payouts.</p>
+
+<h2>Security and retention</h2>
+<p>Scrappy requires HTTPS for its configured AI service and disables cleartext network traffic at the Android application level. Local data remains until you edit/delete it or clear the app's storage, subject to temporary recovery/undo copies described by the app. Exported/shared copies remain wherever you chose to save or send them.</p>
+
+<h2>Third-party services</h2>
+<p>The production app may communicate with Google Gemini through the Scrappy AI gateway, Open-Meteo for weather, and NOAA/National Weather Service for radar. Review and link the applicable current third-party privacy terms on the published policy page before release.</p>
+
+<h2>Changes</h2>
+<p>If Scrappy adds analytics, advertising, accounts, new cloud storage, new AI processing, or other data collection, this policy and the Google Play Data safety declaration must be updated before or when those changes are released.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy can be sent to: <strong>easymoneyismythang@gmail.com</strong>.</p>
+
+
+</body></html>
