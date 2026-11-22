@@ -24,6 +24,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions { jvmTarget = "17" }
+
+    signingConfigs {
+        create("release") {
+            val ksPath = System.getenv("SCRAPPY_KEYSTORE_PATH")
+            if (!ksPath.isNullOrBlank()) {
+                storeFile = file(ksPath)
+                storePassword = System.getenv("SCRAPPY_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("SCRAPPY_KEY_ALIAS") ?: "scrappy-upload"
+                keyPassword = System.getenv("SCRAPPY_KEY_PASSWORD") ?: System.getenv("SCRAPPY_KEYSTORE_PASSWORD")
+            }
+        }
+    }
     buildTypes {
         debug {
             applicationIdSuffix = ".preview"
@@ -36,6 +48,9 @@ android {
             matchingFallbacks += listOf("debug")
         }
         release {
+            if (!System.getenv("SCRAPPY_KEYSTORE_PATH").isNullOrBlank()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
