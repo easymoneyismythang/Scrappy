@@ -16,7 +16,7 @@
 <h2>AI metal identification</h2>
 <p>Scrappy's production release is configured with a Scrappy-operated HTTPS AI gateway. A camera image is not sent for AI analysis merely by taking the photo. Before each AI upload, Scrappy presents a consent action. If you choose <strong>Send and analyze</strong>, the app creates a resized and re-encoded JPEG copy and sends it to the configured Scrappy service for processing with Google Gemini. Original EXIF metadata is not intentionally included in that re-encoded copy, although information visibly present in the image remains visible.</p>
 
-<p>The Android app does not contain the Gemini API key. The supplied Scrappy gateway server creates no image, prompt, or model-response files or logs, and persists only the UTC day and a request count for its daily budget. [Production host and its log-retention details to be added at deployment.]</p>
+<p>The Android app does not contain the Gemini API key. The supplied Scrappy gateway server creates no image, prompt, or model-response files or logs, and persists only the UTC day and a request count for its daily budget. The production AI gateway runs on Render (scrappy-ai-gateway.onrender.com, free tier). Render keeps its own platform service logs; see Render’s privacy policy for their retention.</p>
 
 <p>AI identification is a visual estimate and is not laboratory analysis, guaranteed alloy identification, or a scrapyard grade decision.</p>
 
