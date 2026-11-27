@@ -10,8 +10,8 @@ android {
         manifestPlaceholders["scrappyLabel"] = "Scrappy"
         minSdk = 26
         targetSdk = 36
-        versionCode = 55
-        versionName = "4.9.6"
+        versionCode = 56
+        versionName = "4.9.7"
         val aiEndpoint=providers.gradleProperty("scrappyAiEndpoint").orElse("").get()
         buildConfigField("String", "AI_ENDPOINT", "\"" + aiEndpoint.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
         val aiPrivacyUrl=providers.gradleProperty("scrappyAiPrivacyUrl").orElse("").get()

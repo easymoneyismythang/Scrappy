@@ -34,3 +34,5 @@ Compile/target SDK: API 36 (Android 16)
 New Android phone apps and updates must target Android 16 / API 36. Scrappy does. Confirm Play policy again on submission day because requirements can change.
 
 No signed AAB, physical-device acceptance result, Play Console form submission, or Google approval is claimed by this source package.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

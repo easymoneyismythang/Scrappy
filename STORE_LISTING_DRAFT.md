@@ -29,3 +29,5 @@ Improved yard-price safety and quote separation, hardened camera/AI release conf
 - Required phone screenshots captured from the accepted release build.
 - Public privacy-policy URL.
 - Support email and optional support website.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

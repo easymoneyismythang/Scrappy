@@ -31,3 +31,5 @@ The records below apply to the October 16 source/APK, before the HTTP 408 messag
 AI_ENDPOINT and AI_PRIVACY_URL remain empty in this Preview. No live Gemini request, production service validation, physical-device test or signed production APK/AAB was performed. Standalone Kotlin tests were not rerun separately; equivalent current Android/JVM Gradle suites passed. The earlier network/JDK/certificate setup blockers were resolved for this build. Historical failed setup logs are retained as environment evidence, not current failures.
 
 Current evidence: verification/permission-build-2026-10-16/ and verification/permission-recovery-2026-10-16/. See ANDROID_PERMISSION_BUILD_2026-10-16.md for APK hash and phone acceptance steps.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

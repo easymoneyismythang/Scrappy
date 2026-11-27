@@ -18,3 +18,5 @@ Current checkpoint — October 14, 2026 (UTC): camera cleanup/cancellation fixes
 - Source/static checks and backend tests can run in this workspace.
 - Android Gradle/JUnit execution remains dependent on the unavailable/corrupt local Gradle/Kotlin dependency cache; do not claim a fresh Android suite pass until it runs successfully.
 - Physical Samsung acceptance testing remains required before release.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

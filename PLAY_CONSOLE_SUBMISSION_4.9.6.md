@@ -14,3 +14,5 @@
 10. Apply for Production access if required, resolve review feedback, then create the Production release.
 
 As of October 2026, Android phone submissions must target API 36; this project is configured for API 36. Re-check current Play policy on submission day.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

@@ -32,3 +32,5 @@ Production package `com.scrappy.app`; debug Preview package `com.scrappy.app.pre
 Still required: Android verification as detailed in IMPLEMENTATION_STATUS.md; phone testing; production Gemini backend and disclosures; verified yard/live-price services or accurately limited listing; weather commercial readiness; public privacy policy and final assets; signing, Play testing and submission. No Play-ready release is claimed.
 
 For installation and safe data transfer, read INSTALL_TEST_BUILD.md. Preview starts with separate local storage and does not replace the older app.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

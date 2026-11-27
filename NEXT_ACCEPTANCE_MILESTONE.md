@@ -60,3 +60,5 @@ Install the separately supplied Scrappy-v4.9.6-permission-recovery-preview.apk, 
 - Complete Play Console data-safety/content forms, testing track and submission.
 
 Do not claim Play Store readiness until these gates are complete.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

@@ -48,3 +48,6 @@ An unsupported API level produces `device_findings` and exit status 1. A
 supported level means only that the minimum-SDK requirement passes; installation,
 camera behavior and live AI still need separate acceptance. Omitting the option
 performs the existing APK checks without claiming device compatibility.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).
+versionCode `56`

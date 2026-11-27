@@ -38,3 +38,5 @@ Calling opens the dialer. Directions and nearby-yard searches open an external m
 4. Check the final dependency tree for any added analytics, crash reporting, ads, or other SDK collection. None should be declared absent merely because it is absent from this source snapshot if the production build adds it.
 5. Make the public privacy policy match the final deployed behavior exactly.
 6. Complete every Play Console Data safety question; Google requires the form for closed/open/production tracks.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).

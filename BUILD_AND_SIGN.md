@@ -29,3 +29,6 @@ Install the fresh preview/debug APK on a physical Android phone and complete `PR
 For Google Play, use Android Studio → Build → Generate Signed App Bundle or APK → Android App Bundle, or configure a secure external signing setup. Keep the upload keystore and passwords outside this project. Expected bundle output is `app/build/outputs/bundle/release/app-release.aab`.
 
 Never commit upload signing keys/passwords, Gemini keys, backend secrets, `keystore.properties`, or `scrappy-release.properties`. Complete `PLAY_STORE_RELEASE_CHECKLIST.md` before publication.
+
+Current version: 4.9.7 — dark ScrapRight-style UI redesign (Prices / Scan / Yards / More tabs, real Covington yards, Georgia index prices).
+versionCode `56`
